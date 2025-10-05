@@ -1,0 +1,20 @@
+{
+  "room": "living",
+  "broker": "mqtt://13.211.94.117:1883",
+  "sensors": [
+    { "type": "temp", "intervalMs": 5000, "pChange": 0.05, "tempRange": 4 },
+    { "type": "motion", "intervalMs": 5000, "pChange": 0.02 },
+    {
+      "type": "light",
+      "intervalMs": 5000,
+      "pChange": 0.1,
+      "lumRange": 0.03,
+      "tempKRange": 80,
+      "lumMin": 0.0,
+      "lumMax": 1.0,
+      "kMin": 2700,
+      "kMax": 6500
+    },
+    { "type": "facecam", "intervalMs": 5000, "pAdd": 0.4, "pRemove": 0.35, "maxFaces": 3, "camRes": 64, "pNewFace": 0.01 }
+  ]
+}

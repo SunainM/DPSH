@@ -1,0 +1,10 @@
+{
+  "room": "bed1",
+  "broker": "mqtt://13.211.94.117:1883",
+  "sensors": [
+    { "type": "temp", "intervalMs": 4000, "pChange": 0.07, "tempRange": 3 },
+    { "type": "motion", "intervalMs": 5500, "pChange": 0.03 },
+    { "type": "light", "intervalMs": 6000, "pChange": 0.08, "lumRange": 0.05, "tempKRange": 120, "lumMin": 0.05, "lumMax": 0.95, "kMin": 2700, "kMax": 6500 },
+    { "type": "facecam", "intervalMs": 5000, "pAdd": 0.3, "pRemove": 0.25, "maxFaces": 3, "camRes": 64, "pNewFace": 0.02 }
+  ]
+}

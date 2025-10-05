@@ -1,0 +1,4689 @@
+[
+    {
+        "id": "b1f9f7b4f8aa1f3a",
+        "type": "tab",
+        "label": "SmartHome MQTT (Main)",
+        "disabled": false,
+        "info": "Subscribes to homeA/+/+."
+    },
+    {
+        "id": "cc7c407e2d45384a",
+        "type": "subflow",
+        "name": "Light Stringer",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d30ac5b6ab237afe"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 360,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d30ac5b6ab237afe",
+                        "port": 0
+                    }
+                ]
+            },
+            {
+                "x": 360,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "d30ac5b6ab237afe",
+                        "port": 1
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 360,
+            "y": 140,
+            "wires": [
+                {
+                    "id": "d30ac5b6ab237afe",
+                    "port": 2
+                }
+            ]
+        }
+    },
+    {
+        "id": "9442d67fc7e0212d",
+        "type": "subflow",
+        "name": "Motion Converter",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "43a69f1f497ef016"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 400,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "43a69f1f497ef016",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [
+            {
+                "name": "x",
+                "type": "str",
+                "value": ""
+            }
+        ],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "3419fa2caa2ddfb4",
+        "type": "subflow",
+        "name": "Temp Converter",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "6ea1d157c147064c"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 380,
+                "y": 40,
+                "wires": [
+                    {
+                        "id": "6ea1d157c147064c",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99",
+        "status": {
+            "x": 400,
+            "y": 140,
+            "wires": [
+                {
+                    "id": "6ea1d157c147064c",
+                    "port": 0
+                }
+            ]
+        }
+    },
+    {
+        "id": "09ab9e94c13cf6eb",
+        "type": "subflow",
+        "name": "Subflow 1",
+        "info": "",
+        "in": [],
+        "out": []
+    },
+    {
+        "id": "89caf20d92949c1d",
+        "type": "subflow",
+        "name": "Temp_c JSONIFY",
+        "info": "",
+        "category": "",
+        "in": [
+            {
+                "x": 60,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4b76915b719a725d"
+                    }
+                ]
+            }
+        ],
+        "out": [
+            {
+                "x": 380,
+                "y": 80,
+                "wires": [
+                    {
+                        "id": "4b76915b719a725d",
+                        "port": 0
+                    }
+                ]
+            }
+        ],
+        "env": [],
+        "meta": {},
+        "color": "#DDAA99"
+    },
+    {
+        "id": "9ad91533482e5848",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Hallway",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "6edeb7daba230a85",
+            "ef7ed2121e92fdfa",
+            "fba741783876743d",
+            "bcd00ad0cc1fc77f",
+            "dd30ca31f460ade2",
+            "c71ff0d3c5a440fc"
+        ],
+        "x": 4,
+        "y": 433,
+        "w": 1508,
+        "h": 661.5
+    },
+    {
+        "id": "ef7ed2121e92fdfa",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9ad91533482e5848",
+        "name": "Temp",
+        "style": {
+            "label": true,
+            "color": "#ff0000",
+            "stroke": "#ff0000"
+        },
+        "nodes": [
+            "16aff74f3bcb7d76",
+            "d4d03202b187b4d2",
+            "b0694c3b2f8a849d",
+            "e6f19a650c6cba08",
+            "b65638fae95e841e",
+            "747286db91f6b23f"
+        ],
+        "x": 134,
+        "y": 459,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "fba741783876743d",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9ad91533482e5848",
+        "name": "Light",
+        "style": {
+            "label": true,
+            "stroke": "#bfbfbf"
+        },
+        "nodes": [
+            "81cd9c79a5398e95",
+            "f95a2047536eb4c9",
+            "04356dc43d36e304",
+            "fd887978002fd0b7",
+            "e88ca77a2ed4dc38",
+            "15d391f4df445e1b",
+            "dc518fac13a278c5",
+            "8d4c189eb21723b1",
+            "a2c1af138e1c490b",
+            "27bbde585c9c7fc2",
+            "bbbe8fbde09e4ff3"
+        ],
+        "x": 134,
+        "y": 559,
+        "w": 1232,
+        "h": 142
+    },
+    {
+        "id": "bcd00ad0cc1fc77f",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9ad91533482e5848",
+        "name": "",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true
+        },
+        "nodes": [
+            "c7db36a2f856ebe8",
+            "c603580ad358830b",
+            "d1adc0161f57fd3b",
+            "8cea894a610fa446",
+            "b99a03c9feb4d89d",
+            "8546f808b6f9a5ef"
+        ],
+        "x": 134,
+        "y": 719,
+        "w": 1352,
+        "h": 82
+    },
+    {
+        "id": "dd30ca31f460ade2",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9ad91533482e5848",
+        "name": "Face",
+        "style": {
+            "label": true,
+            "stroke": "#0070c0"
+        },
+        "nodes": [
+            "2a120a3bcdb4c062",
+            "b049ae8c8afae45e",
+            "94261ccd177fdede",
+            "3a1551e4ed6f7e2b",
+            "117f1232cfd80383",
+            "70e4ce519328dc20",
+            "0996e8a1169024ec",
+            "585477ea0356c623",
+            "32b0de7078f7fb6e",
+            "353d19f505add7f0",
+            "c80269e58e0c2728"
+        ],
+        "x": 134,
+        "y": 819,
+        "w": 1292,
+        "h": 249.5
+    },
+    {
+        "id": "376e6462af7faca0",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Living",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "b2bfce452c2f17ab",
+            "b4291c51f7077253",
+            "9d6a60ad07288103",
+            "7a0f08e14b98f4b9",
+            "dd6f7c1562c5f625"
+        ],
+        "x": 14,
+        "y": 1173,
+        "w": 1478,
+        "h": 661.5
+    },
+    {
+        "id": "b2bfce452c2f17ab",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "376e6462af7faca0",
+        "name": "Temp",
+        "style": {
+            "label": true,
+            "color": "#ff0000",
+            "stroke": "#ff0000"
+        },
+        "nodes": [
+            "ca6bffc44239c6e2",
+            "7493a9557e4ece94",
+            "1b6304b3c8a66433",
+            "f4c1458d09706702",
+            "9df155ff4bcb3b06",
+            "596e66cb46cb4429"
+        ],
+        "x": 134,
+        "y": 1199,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "b4291c51f7077253",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "376e6462af7faca0",
+        "name": "Light",
+        "style": {
+            "label": true,
+            "stroke": "#bfbfbf"
+        },
+        "nodes": [
+            "f95868e5faa0f4e7",
+            "c77d5a3f823499b1",
+            "02966237beb4a10f",
+            "3f9fa1c9f93a2478",
+            "cb467b9d3cf75675",
+            "70584931aeeeabc1",
+            "a9d9767b915c90d9",
+            "eab653bd80148034",
+            "97b4fcbf972bd071",
+            "fb5757ad7014f1b0",
+            "09ab8f6cd4ef3453"
+        ],
+        "x": 134,
+        "y": 1299,
+        "w": 1212,
+        "h": 142
+    },
+    {
+        "id": "9d6a60ad07288103",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "376e6462af7faca0",
+        "name": "",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true
+        },
+        "nodes": [
+            "0d65b9b74b4a9e83",
+            "6475c95fe88d05ee",
+            "fc16f58742e319d7",
+            "e4de1a2de26caf2b",
+            "a2007eae14ce033c",
+            "e1a5b7143b2e5ed5"
+        ],
+        "x": 134,
+        "y": 1459,
+        "w": 1332,
+        "h": 82
+    },
+    {
+        "id": "7a0f08e14b98f4b9",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "376e6462af7faca0",
+        "name": "Face",
+        "style": {
+            "label": true,
+            "stroke": "#0070c0"
+        },
+        "nodes": [
+            "dbd0c7b881683d28",
+            "dc45ca2f1fb9d6ad",
+            "c9db57ebce7ec02a",
+            "6fbc645254892c4c",
+            "ff6b62efde9d1e35",
+            "a9325ec2ad08c771",
+            "7b8b7bc0ada2f329",
+            "d046882989e8fd03",
+            "747abd9a2d26b48e",
+            "4ad816e5421d4894",
+            "055a1be468d36d46"
+        ],
+        "x": 134,
+        "y": 1559,
+        "w": 1292,
+        "h": 249.5
+    },
+    {
+        "id": "c350c68753885cd2",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Bed1",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "ec178797f8bef616",
+            "1b77602425258d53",
+            "bb403bb97116c27c",
+            "709082604f55a361",
+            "da19354bb06fb629"
+        ],
+        "x": 1554,
+        "y": 433,
+        "w": 1478,
+        "h": 661.5
+    },
+    {
+        "id": "ec178797f8bef616",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "c350c68753885cd2",
+        "name": "Temp",
+        "style": {
+            "label": true,
+            "color": "#ff0000",
+            "stroke": "#ff0000"
+        },
+        "nodes": [
+            "6208cd5431e782f2",
+            "7be88ebabcbc5332",
+            "5a27e1c1e2147382",
+            "9c5b1fd1c899b418",
+            "6feee739a4305276",
+            "1e6794010076bb25"
+        ],
+        "x": 1674,
+        "y": 459,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "1b77602425258d53",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "c350c68753885cd2",
+        "name": "Light",
+        "style": {
+            "label": true,
+            "stroke": "#bfbfbf"
+        },
+        "nodes": [
+            "c80649a6bb8b7cbe",
+            "9b0d87afa45fae29",
+            "bc5d241ba2d74b1d",
+            "cc12fa5ac9080601",
+            "cba00f3c3cbf3e78",
+            "afd73ecc18672f38",
+            "3a8a5c5cab3d4d1f",
+            "f103116047373a73",
+            "66f038ccbb58bf08",
+            "a022ec44aa7677cd",
+            "cb1c18a6c7612782"
+        ],
+        "x": 1674,
+        "y": 559,
+        "w": 1212,
+        "h": 142
+    },
+    {
+        "id": "bb403bb97116c27c",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "c350c68753885cd2",
+        "name": "",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true
+        },
+        "nodes": [
+            "ddd3f8e65401d0f6",
+            "655356ac45365fe4",
+            "f1ecb3dd3c8f8a97",
+            "3061292c954fe98c",
+            "d11bb84d24da370a",
+            "f310ce47452c86bd"
+        ],
+        "x": 1674,
+        "y": 719,
+        "w": 1332,
+        "h": 82
+    },
+    {
+        "id": "709082604f55a361",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "c350c68753885cd2",
+        "name": "Face",
+        "style": {
+            "label": true,
+            "stroke": "#0070c0"
+        },
+        "nodes": [
+            "9e3320e48a4b8be9",
+            "97560c388bb832a0",
+            "e2904f7ddcfdd889",
+            "61be904772959899",
+            "5e18ffe8d2eb3fb5",
+            "eafc447da6f6f710",
+            "a1478b557bacb1fd",
+            "54e2b20206a9f783",
+            "ea6f016c5a408d92",
+            "1565e37767cc172b",
+            "32726ef64fca93ec"
+        ],
+        "x": 1674,
+        "y": 819,
+        "w": 1292,
+        "h": 249.5
+    },
+    {
+        "id": "548f9a0ce0fff73d",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Bed2",
+        "style": {
+            "label": true
+        },
+        "nodes": [
+            "dfea40f9d3747423",
+            "28626ccf091a8e33",
+            "7ec56f7ebb82edcd",
+            "6574ec0525214251",
+            "c4a2f3f7b4076d59"
+        ],
+        "x": 1554,
+        "y": 1173,
+        "w": 1478,
+        "h": 661.5
+    },
+    {
+        "id": "dfea40f9d3747423",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "548f9a0ce0fff73d",
+        "name": "Temp",
+        "style": {
+            "label": true,
+            "color": "#ff0000",
+            "stroke": "#ff0000"
+        },
+        "nodes": [
+            "4863a23157efb1fa",
+            "6b223d4578f8563f",
+            "9a4e66d064fe30b3",
+            "bac288f843b8c089",
+            "84d06be18570e9f6",
+            "807b0ff253b9c357"
+        ],
+        "x": 1674,
+        "y": 1199,
+        "w": 1232,
+        "h": 82
+    },
+    {
+        "id": "28626ccf091a8e33",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "548f9a0ce0fff73d",
+        "name": "Light",
+        "style": {
+            "label": true,
+            "stroke": "#bfbfbf"
+        },
+        "nodes": [
+            "df92d23418c4c06e",
+            "89402860d12e0468",
+            "020c5847e41e58cd",
+            "b30e0e110aacd9cf",
+            "b95b944a4cd615c1",
+            "693eb7dc9d5990ce",
+            "32dbd3c78a49bd67",
+            "4182195fa7332b41",
+            "91ebf9c6f8558685",
+            "58995f5170f7502d",
+            "ab462d6325ee1dc3"
+        ],
+        "x": 1674,
+        "y": 1299,
+        "w": 1212,
+        "h": 142
+    },
+    {
+        "id": "7ec56f7ebb82edcd",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "548f9a0ce0fff73d",
+        "name": "",
+        "style": {
+            "stroke": "#6f2fa0",
+            "label": true
+        },
+        "nodes": [
+            "0eee267680722be9",
+            "1f2d364e2ac25c9d",
+            "c2a0bd6f3c33e51c",
+            "889289dd105cf161",
+            "2d137993c3dddbe8",
+            "e56205b26b483e3f"
+        ],
+        "x": 1674,
+        "y": 1459,
+        "w": 1332,
+        "h": 82
+    },
+    {
+        "id": "6574ec0525214251",
+        "type": "group",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "548f9a0ce0fff73d",
+        "name": "Face",
+        "style": {
+            "label": true,
+            "stroke": "#0070c0"
+        },
+        "nodes": [
+            "c7347faf659557fb",
+            "bb88fbf2a2ab24be",
+            "41ac989ba1fbbf2a",
+            "392ab521ca764a36",
+            "41f269deea17bf0d",
+            "560b981004fc53bc",
+            "ab572e5ac9708c14",
+            "2efbd74cb8488fd1",
+            "cecff1b5908406fc",
+            "0f7f91f3aff32ed5",
+            "1848cec5453b1b84"
+        ],
+        "x": 1674,
+        "y": 1559,
+        "w": 1292,
+        "h": 249.5
+    },
+    {
+        "id": "208aa51d1efd858e",
+        "type": "global-config",
+        "env": [],
+        "modules": {
+            "@flowfuse/node-red-dashboard": "1.28.0"
+        }
+    },
+    {
+        "id": "98c981e815a90e23",
+        "type": "mqtt-broker",
+        "name": "",
+        "broker": "localhost",
+        "port": 1883,
+        "clientid": "",
+        "autoConnect": true,
+        "usetls": false,
+        "protocolVersion": 4,
+        "keepalive": 60,
+        "cleansession": true,
+        "autoUnsubscribe": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthRetain": "false",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closeRetain": "false",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willRetain": "false",
+        "willPayload": "",
+        "willMsg": {},
+        "userProps": "",
+        "sessionExpiry": ""
+    },
+    {
+        "id": "718464864a7e7a36",
+        "type": "ui-base",
+        "name": "My Dashboard",
+        "path": "/dashboard",
+        "appIcon": "",
+        "includeClientData": true,
+        "acceptsClientConfig": [
+            "ui-notification",
+            "ui-control"
+        ],
+        "showPathInSidebar": false,
+        "headerContent": "page",
+        "navigationStyle": "default",
+        "titleBarStyle": "default",
+        "showReconnectNotification": true,
+        "notificationDisplayTime": 1,
+        "showDisconnectNotification": true,
+        "allowInstall": true
+    },
+    {
+        "id": "e8914871c4b4fa5b",
+        "type": "ui-page",
+        "name": "HomeA",
+        "ui": "718464864a7e7a36",
+        "path": "/homeA",
+        "icon": "home",
+        "layout": "grid",
+        "theme": "674cc4d9ed06973d",
+        "breakpoints": [
+            {
+                "name": "Default",
+                "px": "0",
+                "cols": "3"
+            },
+            {
+                "name": "Tablet",
+                "px": "576",
+                "cols": "6"
+            },
+            {
+                "name": "Small Desktop",
+                "px": "768",
+                "cols": "9"
+            },
+            {
+                "name": "Desktop",
+                "px": "1024",
+                "cols": "12"
+            }
+        ],
+        "order": 1,
+        "className": "",
+        "visible": "true",
+        "disabled": "false"
+    },
+    {
+        "id": "f0e260268fa772fa",
+        "type": "ui-group",
+        "name": "Hallway",
+        "page": "e8914871c4b4fa5b",
+        "width": 3,
+        "height": 1,
+        "order": 1,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "432f96c475996c24",
+        "type": "ui-group",
+        "name": "Living",
+        "page": "e8914871c4b4fa5b",
+        "width": "3",
+        "height": 1,
+        "order": 2,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "56bab64724f91665",
+        "type": "ui-group",
+        "name": "bed1",
+        "page": "e8914871c4b4fa5b",
+        "width": "3",
+        "height": 1,
+        "order": 3,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "4e79c10168d7648e",
+        "type": "ui-group",
+        "name": "bed2",
+        "page": "e8914871c4b4fa5b",
+        "width": "3",
+        "height": 1,
+        "order": 4,
+        "showTitle": true,
+        "className": "",
+        "visible": "true",
+        "disabled": "false",
+        "groupType": "default"
+    },
+    {
+        "id": "75ef41f74704cb5c",
+        "type": "ui-theme",
+        "name": "Default Theme",
+        "colors": {
+            "surface": "#ffffff",
+            "primary": "#0094ce",
+            "bgPage": "#878787",
+            "groupBg": "#ffffff",
+            "groupOutline": "#cccccc"
+        },
+        "sizes": {
+            "density": "comfortable",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "674cc4d9ed06973d",
+        "type": "ui-theme",
+        "name": "Dark",
+        "colors": {
+            "surface": "#1e1e1e",
+            "primary": "#007585",
+            "bgPage": "#2b2b2b",
+            "groupBg": "#1e1e1e",
+            "groupOutline": "#444444"
+        },
+        "sizes": {
+            "density": "default",
+            "pagePadding": "12px",
+            "groupGap": "12px",
+            "groupBorderRadius": "4px",
+            "widgetGap": "12px"
+        }
+    },
+    {
+        "id": "d30ac5b6ab237afe",
+        "type": "function",
+        "z": "cc7c407e2d45384a",
+        "name": "Light Stringer",
+        "func": "let p = msg.payload;\nif (typeof p === \"string\") {\n    try { p = JSON.parse(p); }\n    catch (e) {\n        node.error(\"Invalid JSON string\", msg);\n        return null;\n    }\n}\n\nlet lumMsg = null;\nlet tempMsg = null;\nlet statusMsg = null;\n\nlet statusText = \"\";\n\n// Only update luminosity if present\nif (p.luminosity !== undefined && p.luminosity !== null && !isNaN(p.luminosity)) {\n    const lum = Math.round(Number(p.luminosity) ); // 0..100\n    lumMsg = { payload: lum };                          // numeric for gauge\n    statusText += `L:${lum} `;\n}\n\n// Only update temp if present\nif (p.temp_k !== undefined && p.temp_k !== null && !isNaN(p.temp_k)) {\n    const tempK = Number(p.temp_k);\n    tempMsg = { payload: tempK };                       // numeric for gauge\n    statusText += `T:${tempK}K`;\n}\n\n// Build status output + show editor status\nif (statusText) {\n    const txt = statusText.trim();\n    node.status({ fill: \"green\", shape: \"dot\", text: txt });\n    statusMsg = { payload: txt };\n} else {\n    node.status({ fill: \"grey\", shape: \"ring\", text: \"no update\" });\n    statusMsg = { payload: \"no update\" };\n}\n\n// OUT1 = Luminosity (0–100 number)\n// OUT2 = Temp K (number)\n// OUT3 = Status text string\nreturn [tempMsg,lumMsg, statusMsg];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nlet lumMsg = { payload: 0};\nlet tempMsg = { payload: 5000 };\nlet statusMsg = { payload: \"StartUp\" };",
+        "finalize": "",
+        "libs": [],
+        "x": 210,
+        "y": 80,
+        "wires": [
+            [],
+            [],
+            []
+        ]
+    },
+    {
+        "id": "43a69f1f497ef016",
+        "type": "function",
+        "z": "9442d67fc7e0212d",
+        "name": "Motion Converter",
+        "func": "// Ensure payload is an object\nlet p = msg.payload;\n\n// Check that \"motion\" exists and is a boolean\nif (p && typeof p.motion === \"boolean\") {\n    msg.payload = p.motion; // keep the boolean value\n    return msg;\n}\n\n// Otherwise, ignore this message\nreturn null;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "6ea1d157c147064c",
+        "type": "function",
+        "z": "3419fa2caa2ddfb4",
+        "name": "Temp Converter",
+        "func": "// payload is still a string, so parse first\nlet p =msg.payload;\n\n\n// extract temp_c and convert to number\nmsg.payload = Number(p.temp_c);\n\n// if it's not a valid number, stop here\nif (isNaN(msg.payload)) {\n    node.status({ fill: \"yellow\", shape: \"ring\", text: \"invalid temp_c\" });\n    return [null, { payload: \"Invalid temperature\" }];\n}\n\n// valid reading\nnode.status({ fill: \"green\", shape: \"dot\", text: `temp: ${msg.payload}°C` });\n\n// 1st output → parsed temperature\n// 2nd output → status message\nreturn [msg, { payload: `Temperature: ${msg.payload}°C` }];\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "4b76915b719a725d",
+        "type": "function",
+        "z": "89caf20d92949c1d",
+        "name": "temp_c jsonify",
+        "func": "msg.payload = { temp_c: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 220,
+        "y": 80,
+        "wires": [
+            []
+        ]
+    },
+    {
+        "id": "a3f3b2f97a7d2c11",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "homeA/+/+",
+        "topic": "homeA/+/+",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 100,
+        "y": 120,
+        "wires": [
+            [
+                "2f14a54cf4c4bd7e",
+                "e0b275f8db411a34"
+            ]
+        ]
+    },
+    {
+        "id": "e0b275f8db411a34",
+        "type": "debug",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Show MQTT payload",
+        "active": false,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "true",
+        "targetType": "full",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 500,
+        "y": 120,
+        "wires": []
+    },
+    {
+        "id": "2f14a54cf4c4bd7e",
+        "type": "json",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "",
+        "property": "payload",
+        "action": "obj",
+        "pretty": false,
+        "x": 110,
+        "y": 180,
+        "wires": [
+            [
+                "b312864f0c3d802e"
+            ]
+        ]
+    },
+    {
+        "id": "b312864f0c3d802e",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Parser",
+        "func": "// Topic is homeA/<room>/<sensor>\nconst parts = (msg.topic || '').split('/');\nif (parts.length !== 3 || parts[0] !== 'homeA') return null;\n\nconst room   = parts[1];\nconst sensor = parts[2];\n\n// After the JSON node, payload is already an object; keep it\nmsg.meta = {\n  room,\n  sensor,\n  ts: (msg.payload && msg.payload.ts) || new Date().toISOString()\n};\n\n// IMPORTANT: keep msg.topic as the ORIGINAL MQTT topic\n// e.g., \"homeA/hallway/light\"\n// (The topic filter subflow will use this to match per-room.)\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 110,
+        "y": 240,
+        "wires": [
+            [
+                "c133d2bdff20d718"
+            ]
+        ]
+    },
+    {
+        "id": "c133d2bdff20d718",
+        "type": "switch",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Room Sorter",
+        "property": "meta.room",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "eq",
+                "v": "hallway",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "living",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bed1",
+                "vt": "str"
+            },
+            {
+                "t": "eq",
+                "v": "bed2",
+                "vt": "str"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 4,
+        "x": 110,
+        "y": 280,
+        "wires": [
+            [
+                "aa43e2f61e717cea"
+            ],
+            [
+                "257fe6925f3fc27b"
+            ],
+            [
+                "c81067db3ba30323"
+            ],
+            [
+                "f142df6cc000b658"
+            ]
+        ]
+    },
+    {
+        "id": "aa43e2f61e717cea",
+        "type": "link out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Hallway out",
+        "mode": "link",
+        "links": [
+            "6edeb7daba230a85"
+        ],
+        "x": 295,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "6edeb7daba230a85",
+        "type": "link in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9ad91533482e5848",
+        "name": "Hallway",
+        "links": [
+            "aa43e2f61e717cea"
+        ],
+        "x": 45,
+        "y": 620,
+        "wires": [
+            [
+                "81cd9c79a5398e95",
+                "c603580ad358830b",
+                "16aff74f3bcb7d76",
+                "c80269e58e0c2728"
+            ]
+        ]
+    },
+    {
+        "id": "257fe6925f3fc27b",
+        "type": "link out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Living out",
+        "mode": "link",
+        "links": [
+            "dd6f7c1562c5f625"
+        ],
+        "x": 295,
+        "y": 320,
+        "wires": []
+    },
+    {
+        "id": "c7db36a2f856ebe8",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bcd00ad0cc1fc77f",
+        "name": "MotionLight Logic",
+        "func": "// Save incoming values into node context\nif (msg.topic === \"lum\") {\n    context.set(\"lum\", Number(msg.payload));\n}\nif (msg.topic === \"motion\") {\n    context.set(\"motion\", !!msg.payload);\n}\n\n// Get latest values\nconst lum = context.get(\"lum\");\nconst motion = context.get(\"motion\");\n\n// Only continue if both exist\nif (lum === null || lum === undefined || motion === null || motion === undefined) {\n    node.status({ fill: \"grey\", shape: \"ring\", text: \"waiting for lum+motion…\" });\n    return null;\n}\n\n// --- Logic ---\nif (motion && lum < 1) {\n    context.set(\"lum\", 100);\n\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Motion → Lum set to 100\" });\n    return { payload: 100, topic: \"lum\" };\n}\n\n// Otherwise output current state\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: `L:${lum} M:${motion}`\n});\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nconst lum = 0\nconst motion = false",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 760,
+        "wires": [
+            [
+                "e88ca77a2ed4dc38"
+            ]
+        ]
+    },
+    {
+        "id": "81cd9c79a5398e95",
+        "type": "subflow:cc7c407e2d45384a",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "",
+        "x": 230,
+        "y": 640,
+        "wires": [
+            [
+                "15d391f4df445e1b"
+            ],
+            [
+                "e88ca77a2ed4dc38"
+            ]
+        ]
+    },
+    {
+        "id": "c603580ad358830b",
+        "type": "subflow:9442d67fc7e0212d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bcd00ad0cc1fc77f",
+        "name": "",
+        "x": 250,
+        "y": 760,
+        "wires": [
+            [
+                "b99a03c9feb4d89d",
+                "94261ccd177fdede"
+            ]
+        ]
+    },
+    {
+        "id": "16aff74f3bcb7d76",
+        "type": "subflow:3419fa2caa2ddfb4",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ef7ed2121e92fdfa",
+        "name": "",
+        "x": 240,
+        "y": 500,
+        "wires": [
+            [
+                "b0694c3b2f8a849d"
+            ]
+        ]
+    },
+    {
+        "id": "f95a2047536eb4c9",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "",
+        "topic": "homeA/hallway/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1230,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "04356dc43d36e304",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "",
+        "topic": "homeA/hallway/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1230,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "d4d03202b187b4d2",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ef7ed2121e92fdfa",
+        "name": "",
+        "topic": "homeA/hallway/temp/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1230,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "d1adc0161f57fd3b",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bcd00ad0cc1fc77f",
+        "name": "",
+        "topic": "homeA/hallway/motion/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1340,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "8cea894a610fa446",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bcd00ad0cc1fc77f",
+        "name": "motion jsonify",
+        "func": "msg.payload = { motion: msg.payload }; \n// change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 760,
+        "wires": [
+            [
+                "8546f808b6f9a5ef"
+            ]
+        ]
+    },
+    {
+        "id": "fd887978002fd0b7",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "lum jsonify",
+        "func": "msg.payload = { luminosity: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 660,
+        "wires": [
+            [
+                "27bbde585c9c7fc2"
+            ]
+        ]
+    },
+    {
+        "id": "e88ca77a2ed4dc38",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "group": "f0e260268fa772fa",
+        "name": "Lum Slider",
+        "label": "Lum:",
+        "tooltip": "",
+        "order": 7,
+        "width": 3,
+        "height": "1",
+        "passthru": true,
+        "outs": "end",
+        "topic": "lum",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 390,
+        "y": 660,
+        "wires": [
+            [
+                "8d4c189eb21723b1",
+                "c7db36a2f856ebe8",
+                "fd887978002fd0b7"
+            ]
+        ]
+    },
+    {
+        "id": "15d391f4df445e1b",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "group": "f0e260268fa772fa",
+        "name": "tempk Slider",
+        "label": "tempK:",
+        "tooltip": "",
+        "order": 6,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "1000",
+        "max": "10000",
+        "step": "100",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 390,
+        "y": 600,
+        "wires": [
+            [
+                "dc518fac13a278c5"
+            ]
+        ]
+    },
+    {
+        "id": "b0694c3b2f8a849d",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ef7ed2121e92fdfa",
+        "group": "f0e260268fa772fa",
+        "name": "temp Slider",
+        "label": "Temp:",
+        "tooltip": "",
+        "order": 5,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "-10",
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 410,
+        "y": 500,
+        "wires": [
+            [
+                "e6f19a650c6cba08"
+            ]
+        ]
+    },
+    {
+        "id": "b99a03c9feb4d89d",
+        "type": "ui-switch",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bcd00ad0cc1fc77f",
+        "name": "Hallway Motion Switch",
+        "label": "Motion",
+        "group": "f0e260268fa772fa",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": false,
+        "topic": "motion",
+        "topicType": "str",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 500,
+        "y": 760,
+        "wires": [
+            [
+                "c7db36a2f856ebe8",
+                "8cea894a610fa446"
+            ]
+        ]
+    },
+    {
+        "id": "dc518fac13a278c5",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "Hallway TempK",
+        "group": "f0e260268fa772fa",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Light",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "K",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "1000",
+                "color": "#ff3800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "2000",
+                "color": "#ff6b00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "3000",
+                "color": "#ffd700",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4000",
+                "color": "#fff4e5",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5000",
+                "color": "#ffffff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "6000",
+                "color": "#cfe9ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7000",
+                "color": "#a6d8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "8000",
+                "color": "#8cc8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "9000",
+                "color": "#75bfff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "10000",
+                "color": "#5ab4ff",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "1000",
+        "max": "10000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": "10",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 580,
+        "y": 600,
+        "wires": [
+            [
+                "a2c1af138e1c490b"
+            ]
+        ]
+    },
+    {
+        "id": "e6f19a650c6cba08",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ef7ed2121e92fdfa",
+        "name": "Hallway Temp",
+        "group": "f0e260268fa772fa",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Room Temp",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-10",
+                "color": "#3352f0",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "-10",
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": "6",
+        "sizeKeyThickness": "8",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 600,
+        "y": 500,
+        "wires": [
+            [
+                "747286db91f6b23f"
+            ]
+        ]
+    },
+    {
+        "id": "8d4c189eb21723b1",
+        "type": "ui-progress",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "group": "f0e260268fa772fa",
+        "name": "Hallway_LUM",
+        "label": "Luminosity",
+        "order": 4,
+        "width": null,
+        "height": 0,
+        "color": "",
+        "className": "",
+        "x": 580,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "2a120a3bcdb4c062",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "",
+        "topic": "homeA/hallway/faceData",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 430,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "b049ae8c8afae45e",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "",
+        "topic": "homeA/hallway/FaceNames",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 680,
+        "y": 900,
+        "wires": [
+            [
+                "94261ccd177fdede",
+                "70e4ce519328dc20"
+            ]
+        ]
+    },
+    {
+        "id": "94261ccd177fdede",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "FaceCounter",
+        "func": "// Node-RED Function: merge face count & names (+ motion gate)\nlet fcount = context.get(\"fcount\") ?? null;\nlet ncount = context.get(\"ncount\") ?? null;\nlet names  = context.get(\"names\")  ?? null;\nlet motion = context.get(\"motion\");  // true | false | undefined\n\n// helper to display current state\nfunction showStatus(color, shape, msg) {\n  const nameCount = Array.isArray(names) ? names.length : 0;\n  node.status({\n    fill: color,\n    shape: shape,\n    text: msg\n  });\n}\n\n// --- MOTION topic ---\nif (msg.topic.endsWith(\"/motion\")) {\n  const v = msg?.payload?.motion ?? msg?.payload?.active ?? msg?.payload;\n  const m = (v === true || v === 1 || v === \"1\" || v === \"true\");\n  motion = m;\n  context.set(\"motion\", motion);\n\n  if (!motion) {\n    context.set(\"fcount\", null);\n    context.set(\"ncount\", null);\n    context.set(\"names\", null);\n    showStatus(\"grey\", \"dot\", \"motion off\");\n    return { payload: \"\" };\n  }\n\n  showStatus(\"green\", \"dot\", \"motion on\");\n  return null;\n}\n\n// --- FACE topic ---\nif (msg.topic.endsWith(\"/face\")) {\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  fcount = c;\n  context.set(\"fcount\", fcount);\n  showStatus(\"blue\", \"ring\", \"updated face count\");\n}\n\n// --- FaceNames topic ---\nelse if (msg.topic.endsWith(\"/FaceNames\")) {\n  const arr = Array.isArray(msg?.payload?.names) ? msg.payload.names : [];\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  names = arr;\n  ncount = c;\n  context.set(\"names\", names);\n  context.set(\"ncount\", ncount);\n  showStatus(\"blue\", \"ring\", \"updated FaceNames\");\n} else {\n  return null; // ignore unrelated topics\n}\n\n// --- Check all variables exist ---\nif (fcount == null || ncount == null || names == null || motion == null) {\n  showStatus(\"yellow\", \"dot\", \"waiting for all inputs\");\n  return null;\n}\n\n// --- Final check ---\nif (motion === true && fcount > 0 && ncount > 0 && fcount === ncount && Array.isArray(names)) {\n  const firstWords = names.map(n => String(n).trim().split(/\\s+/)[0]).join(\", \");\n  showStatus(\"green\", \"dot\", `showing ${fcount} faces`);\n\n  return { payload: firstWords };\n}\n\n// --- Fallback ---\nshowStatus(\"grey\", \"dot\", \"no output\");\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "0",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 860,
+        "wires": [
+            [
+                "117f1232cfd80383"
+            ]
+        ]
+    },
+    {
+        "id": "a2c1af138e1c490b",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "temp_k jsonify",
+        "func": "msg.payload = { temp_k: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 600,
+        "wires": [
+            [
+                "bbbe8fbde09e4ff3"
+            ]
+        ]
+    },
+    {
+        "id": "3a1551e4ed6f7e2b",
+        "type": "ui-text",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "group": "f0e260268fa772fa",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Hallway Detected",
+        "label": "Detected:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1270,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "117f1232cfd80383",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1110,
+        "y": 860,
+        "wires": [
+            [
+                "3a1551e4ed6f7e2b"
+            ]
+        ]
+    },
+    {
+        "id": "b65638fae95e841e",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ef7ed2121e92fdfa",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 500,
+        "wires": [
+            [
+                "d4d03202b187b4d2"
+            ]
+        ]
+    },
+    {
+        "id": "8546f808b6f9a5ef",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bcd00ad0cc1fc77f",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1150,
+        "y": 760,
+        "wires": [
+            [
+                "d1adc0161f57fd3b"
+            ]
+        ]
+    },
+    {
+        "id": "27bbde585c9c7fc2",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 660,
+        "wires": [
+            [
+                "04356dc43d36e304"
+            ]
+        ]
+    },
+    {
+        "id": "bbbe8fbde09e4ff3",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "fba741783876743d",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 600,
+        "wires": [
+            [
+                "f95a2047536eb4c9"
+            ]
+        ]
+    },
+    {
+        "id": "70e4ce519328dc20",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "users filter",
+        "func": "// Node-RED Function: extract users from payload\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n  node.status({ fill: \"red\", shape: \"dot\", text: \"invalid payload\" });\n  return null;\n}\n\nconst user_moods = msg.payload.user_moods;\n\nif (!Array.isArray(user_moods)) {\n  node.status({ fill: \"yellow\", shape: \"ring\", text: \"no users found\" });\n  return null;\n}\n\nnode.status({ fill: \"green\", shape: \"dot\", text: `users: ${user_moods.length}` });\nreturn { payload: user_moods };\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 940,
+        "wires": [
+            [
+                "585477ea0356c623"
+            ]
+        ]
+    },
+    {
+        "id": "0996e8a1169024ec",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "",
+        "topic": "homeA/hallway/mood/in",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1210,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "585477ea0356c623",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 940,
+        "wires": [
+            [
+                "0996e8a1169024ec"
+            ]
+        ]
+    },
+    {
+        "id": "32b0de7078f7fb6e",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "",
+        "topic": "homeA/hallway/mood/out",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1090,
+        "y": 1020,
+        "wires": [
+            [
+                "353d19f505add7f0"
+            ]
+        ]
+    },
+    {
+        "id": "353d19f505add7f0",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "Aggregator",
+        "func": "// Input example:\n// { \"temp_c\": 23, \"temp_k\": 296, \"luminosity\": 63 }\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n    node.status({ fill: \"red\", shape: \"dot\", text: \"no or invalid payload\" });\n    return [null, null, null];\n}\n\nconst { temp_c, temp_k, luminosity } = msg.payload;\n\n// Validate values\nif (temp_c == null || temp_k == null || luminosity == null) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing values\" });\n    return [null, null, null];\n}\n\n// Each output as its own named object in payload\nconst msg1 = { payload: { temp_c } };\nconst msg2 = { payload: { temp_k } };\nconst msg3 = { payload: { luminosity } };\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `C:${temp_c} K:${temp_k} L:${luminosity}`\n});\n\nreturn [msg1, msg2, msg3];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 1020,
+        "wires": [
+            [
+                "b65638fae95e841e"
+            ],
+            [
+                "bbbe8fbde09e4ff3"
+            ],
+            [
+                "27bbde585c9c7fc2"
+            ]
+        ]
+    },
+    {
+        "id": "ca6bffc44239c6e2",
+        "type": "subflow:3419fa2caa2ddfb4",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b2bfce452c2f17ab",
+        "name": "",
+        "x": 240,
+        "y": 1240,
+        "wires": [
+            [
+                "1b6304b3c8a66433"
+            ]
+        ]
+    },
+    {
+        "id": "7493a9557e4ece94",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b2bfce452c2f17ab",
+        "name": "",
+        "topic": "homeA/living/temp/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1230,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "1b6304b3c8a66433",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b2bfce452c2f17ab",
+        "group": "432f96c475996c24",
+        "name": "temp Slider",
+        "label": "Temp:",
+        "tooltip": "",
+        "order": 5,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "-10",
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 410,
+        "y": 1240,
+        "wires": [
+            [
+                "f4c1458d09706702"
+            ]
+        ]
+    },
+    {
+        "id": "f4c1458d09706702",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b2bfce452c2f17ab",
+        "name": "living Temp",
+        "group": "432f96c475996c24",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Room Temp",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-10",
+                "color": "#3352f0",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "-10",
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": "6",
+        "sizeKeyThickness": "8",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 590,
+        "y": 1240,
+        "wires": [
+            [
+                "596e66cb46cb4429"
+            ]
+        ]
+    },
+    {
+        "id": "9df155ff4bcb3b06",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b2bfce452c2f17ab",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 1240,
+        "wires": [
+            [
+                "7493a9557e4ece94"
+            ]
+        ]
+    },
+    {
+        "id": "f95868e5faa0f4e7",
+        "type": "subflow:cc7c407e2d45384a",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "",
+        "x": 230,
+        "y": 1380,
+        "wires": [
+            [
+                "70584931aeeeabc1"
+            ],
+            [
+                "cb467b9d3cf75675"
+            ]
+        ]
+    },
+    {
+        "id": "c77d5a3f823499b1",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "",
+        "topic": "homeA/living/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1220,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "02966237beb4a10f",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "",
+        "topic": "homeA/living/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1220,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "3f9fa1c9f93a2478",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "lum jsonify",
+        "func": "msg.payload = { luminosity: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 790,
+        "y": 1400,
+        "wires": [
+            [
+                "fb5757ad7014f1b0"
+            ]
+        ]
+    },
+    {
+        "id": "cb467b9d3cf75675",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "group": "432f96c475996c24",
+        "name": "Lum Slider",
+        "label": "Lum:",
+        "tooltip": "",
+        "order": 7,
+        "width": 3,
+        "height": "1",
+        "passthru": true,
+        "outs": "end",
+        "topic": "lum",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 390,
+        "y": 1400,
+        "wires": [
+            [
+                "eab653bd80148034",
+                "0d65b9b74b4a9e83",
+                "3f9fa1c9f93a2478"
+            ]
+        ]
+    },
+    {
+        "id": "70584931aeeeabc1",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "group": "432f96c475996c24",
+        "name": "tempk Slider",
+        "label": "tempK:",
+        "tooltip": "",
+        "order": 6,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "1000",
+        "max": "10000",
+        "step": "100",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 390,
+        "y": 1340,
+        "wires": [
+            [
+                "a9d9767b915c90d9"
+            ]
+        ]
+    },
+    {
+        "id": "a9d9767b915c90d9",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "livingy TempK",
+        "group": "432f96c475996c24",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Light",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "K",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "1000",
+                "color": "#ff3800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "2000",
+                "color": "#ff6b00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "3000",
+                "color": "#ffd700",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4000",
+                "color": "#fff4e5",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5000",
+                "color": "#ffffff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "6000",
+                "color": "#cfe9ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7000",
+                "color": "#a6d8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "8000",
+                "color": "#8cc8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "9000",
+                "color": "#75bfff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "10000",
+                "color": "#5ab4ff",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "1000",
+        "max": "10000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": "10",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 580,
+        "y": 1340,
+        "wires": [
+            [
+                "97b4fcbf972bd071"
+            ]
+        ]
+    },
+    {
+        "id": "eab653bd80148034",
+        "type": "ui-progress",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "group": "432f96c475996c24",
+        "name": "Hallway_LUM",
+        "label": "Luminosity",
+        "order": 4,
+        "width": "",
+        "height": 0,
+        "color": "",
+        "className": "",
+        "x": 580,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "97b4fcbf972bd071",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "temp_k jsonify",
+        "func": "msg.payload = { temp_k: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 800,
+        "y": 1340,
+        "wires": [
+            [
+                "09ab8f6cd4ef3453"
+            ]
+        ]
+    },
+    {
+        "id": "fb5757ad7014f1b0",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 1400,
+        "wires": [
+            [
+                "02966237beb4a10f"
+            ]
+        ]
+    },
+    {
+        "id": "09ab8f6cd4ef3453",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b4291c51f7077253",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 990,
+        "y": 1340,
+        "wires": [
+            [
+                "c77d5a3f823499b1"
+            ]
+        ]
+    },
+    {
+        "id": "0d65b9b74b4a9e83",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9d6a60ad07288103",
+        "name": "MotionLight Logic",
+        "func": "// Save incoming values into node context\nif (msg.topic === \"lum\") {\n    context.set(\"lum\", Number(msg.payload));\n}\nif (msg.topic === \"motion\") {\n    context.set(\"motion\", !!msg.payload);\n}\n\n// Get latest values\nconst lum = context.get(\"lum\");\nconst motion = context.get(\"motion\");\n\n// Only continue if both exist\nif (lum === null || lum === undefined || motion === null || motion === undefined) {\n    node.status({ fill: \"grey\", shape: \"ring\", text: \"waiting for lum+motion…\" });\n    return null;\n}\n\n// --- Logic ---\nif (motion && lum < 1) {\n    context.set(\"lum\", 100);\n\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Motion → Lum set to 100\" });\n    return { payload: 100, topic: \"lum\" };\n}\n\n// Otherwise output current state\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: `L:${lum} M:${motion}`\n});\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nconst lum = 0\nconst motion = false",
+        "finalize": "",
+        "libs": [],
+        "x": 730,
+        "y": 1500,
+        "wires": [
+            [
+                "cb467b9d3cf75675"
+            ]
+        ]
+    },
+    {
+        "id": "6475c95fe88d05ee",
+        "type": "subflow:9442d67fc7e0212d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9d6a60ad07288103",
+        "name": "",
+        "x": 250,
+        "y": 1500,
+        "wires": [
+            [
+                "a2007eae14ce033c",
+                "6fbc645254892c4c"
+            ]
+        ]
+    },
+    {
+        "id": "fc16f58742e319d7",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9d6a60ad07288103",
+        "name": "",
+        "topic": "homeA/living/motion/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1330,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "e4de1a2de26caf2b",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9d6a60ad07288103",
+        "name": "motion jsonify",
+        "func": "msg.payload = { motion: msg.payload }; \n// change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 960,
+        "y": 1500,
+        "wires": [
+            [
+                "e1a5b7143b2e5ed5"
+            ]
+        ]
+    },
+    {
+        "id": "a2007eae14ce033c",
+        "type": "ui-switch",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9d6a60ad07288103",
+        "name": "living Motion Switch",
+        "label": "Motion",
+        "group": "432f96c475996c24",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": false,
+        "topic": "motion",
+        "topicType": "str",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 490,
+        "y": 1500,
+        "wires": [
+            [
+                "0d65b9b74b4a9e83",
+                "e4de1a2de26caf2b"
+            ]
+        ]
+    },
+    {
+        "id": "e1a5b7143b2e5ed5",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "9d6a60ad07288103",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1150,
+        "y": 1500,
+        "wires": [
+            [
+                "fc16f58742e319d7"
+            ]
+        ]
+    },
+    {
+        "id": "dbd0c7b881683d28",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "Face Parser",
+        "func": "if (!msg.topic || !msg.topic.endsWith(\"face\")) {\n    return null; // ignore non-face topics\n}\n\nif (\n    !msg.payload ||\n    !Array.isArray(msg.payload.faces) ||\n    msg.payload.count == null\n) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing faces or count\" });\n    return null;\n}\n\nconst faces = msg.payload.faces;\nconst count = msg.payload.count;\n\n// Only output when count > 0\nif (count <= 0) {\n    node.status({ fill: \"grey\", shape: \"dot\", text: \"no faces detected\" });\n    return null;\n}\n\n// ✅ Make payload a single object { faces, count }\nconst outMsg = {\n    topic: msg.topic,\n    payload: { faces, count }\n};\n\nreturn outMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 1600,
+        "wires": [
+            [
+                "dc45ca2f1fb9d6ad",
+                "6fbc645254892c4c"
+            ]
+        ],
+        "outputLabels": [
+            "faces"
+        ]
+    },
+    {
+        "id": "dc45ca2f1fb9d6ad",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "",
+        "topic": "homeA/living/faceData",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 420,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "c9db57ebce7ec02a",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "",
+        "topic": "homeA/living/FaceNames",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 670,
+        "y": 1640,
+        "wires": [
+            [
+                "6fbc645254892c4c",
+                "7b8b7bc0ada2f329"
+            ]
+        ]
+    },
+    {
+        "id": "6fbc645254892c4c",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "FaceCounter",
+        "func": "// Node-RED Function: merge face count & names (+ motion gate)\nlet fcount = context.get(\"fcount\") ?? null;\nlet ncount = context.get(\"ncount\") ?? null;\nlet names  = context.get(\"names\")  ?? null;\nlet motion = context.get(\"motion\");  // true | false | undefined\n\n// helper to display current state\nfunction showStatus(color, shape, msg) {\n  const nameCount = Array.isArray(names) ? names.length : 0;\n  node.status({\n    fill: color,\n    shape: shape,\n    text: msg\n  });\n}\n\n// --- MOTION topic ---\nif (msg.topic.endsWith(\"/motion\")) {\n  const v = msg?.payload?.motion ?? msg?.payload?.active ?? msg?.payload;\n  const m = (v === true || v === 1 || v === \"1\" || v === \"true\");\n  motion = m;\n  context.set(\"motion\", motion);\n\n  if (!motion) {\n    context.set(\"fcount\", null);\n    context.set(\"ncount\", null);\n    context.set(\"names\", null);\n    showStatus(\"grey\", \"dot\", \"motion off\");\n    return { payload: \"\" };\n  }\n\n  showStatus(\"green\", \"dot\", \"motion on\");\n  return null;\n}\n\n// --- FACE topic ---\nif (msg.topic.endsWith(\"/face\")) {\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  fcount = c;\n  context.set(\"fcount\", fcount);\n  showStatus(\"blue\", \"ring\", \"updated face count\");\n}\n\n// --- FaceNames topic ---\nelse if (msg.topic.endsWith(\"/FaceNames\")) {\n  const arr = Array.isArray(msg?.payload?.names) ? msg.payload.names : [];\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  names = arr;\n  ncount = c;\n  context.set(\"names\", names);\n  context.set(\"ncount\", ncount);\n  showStatus(\"blue\", \"ring\", \"updated FaceNames\");\n} else {\n  return null; // ignore unrelated topics\n}\n\n// --- Check all variables exist ---\nif (fcount == null || ncount == null || names == null || motion == null) {\n  showStatus(\"yellow\", \"dot\", \"waiting for all inputs\");\n  return null;\n}\n\n// --- Final check ---\nif (motion === true && fcount > 0 && ncount > 0 && fcount === ncount && Array.isArray(names)) {\n  const firstWords = names.map(n => String(n).trim().split(/\\s+/)[0]).join(\", \");\n  showStatus(\"green\", \"dot\", `showing ${fcount} faces`);\n\n  return { payload: firstWords };\n}\n\n// --- Fallback ---\nshowStatus(\"grey\", \"dot\", \"no output\");\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "0",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 950,
+        "y": 1600,
+        "wires": [
+            [
+                "a9325ec2ad08c771"
+            ]
+        ]
+    },
+    {
+        "id": "ff6b62efde9d1e35",
+        "type": "ui-text",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "group": "432f96c475996c24",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "Living Detected",
+        "label": "Detected:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 1260,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "a9325ec2ad08c771",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1110,
+        "y": 1600,
+        "wires": [
+            [
+                "ff6b62efde9d1e35"
+            ]
+        ]
+    },
+    {
+        "id": "7b8b7bc0ada2f329",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "users filter",
+        "func": "// Node-RED Function: extract users from payload\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n  node.status({ fill: \"red\", shape: \"dot\", text: \"invalid payload\" });\n  return null;\n}\n\nconst user_moods = msg.payload.user_moods;\n\nif (!Array.isArray(user_moods)) {\n  node.status({ fill: \"yellow\", shape: \"ring\", text: \"no users found\" });\n  return null;\n}\n\nnode.status({ fill: \"green\", shape: \"dot\", text: `users: ${user_moods.length}` });\nreturn { payload: user_moods };\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 890,
+        "y": 1680,
+        "wires": [
+            [
+                "747abd9a2d26b48e"
+            ]
+        ]
+    },
+    {
+        "id": "d046882989e8fd03",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "",
+        "topic": "homeA/living/mood/in",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1200,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "747abd9a2d26b48e",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 1030,
+        "y": 1680,
+        "wires": [
+            [
+                "d046882989e8fd03"
+            ]
+        ]
+    },
+    {
+        "id": "4ad816e5421d4894",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "",
+        "topic": "homeA/living/mood/out",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 1080,
+        "y": 1760,
+        "wires": [
+            [
+                "055a1be468d36d46"
+            ]
+        ]
+    },
+    {
+        "id": "055a1be468d36d46",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7a0f08e14b98f4b9",
+        "name": "Aggregator",
+        "func": "// Input example:\n// { \"temp_c\": 23, \"temp_k\": 296, \"luminosity\": 63 }\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n    node.status({ fill: \"red\", shape: \"dot\", text: \"no or invalid payload\" });\n    return [null, null, null];\n}\n\nconst { temp_c, temp_k, luminosity } = msg.payload;\n\n// Validate values\nif (temp_c == null || temp_k == null || luminosity == null) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing values\" });\n    return [null, null, null];\n}\n\n// Each output as its own named object in payload\nconst msg1 = { payload: { temp_c } };\nconst msg2 = { payload: { temp_k } };\nconst msg3 = { payload: { luminosity } };\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `C:${temp_c} K:${temp_k} L:${luminosity}`\n});\n\nreturn [msg1, msg2, msg3];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1330,
+        "y": 1760,
+        "wires": [
+            [
+                "9df155ff4bcb3b06"
+            ],
+            [
+                "09ab8f6cd4ef3453"
+            ],
+            [
+                "fb5757ad7014f1b0"
+            ]
+        ]
+    },
+    {
+        "id": "dd6f7c1562c5f625",
+        "type": "link in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "376e6462af7faca0",
+        "name": "Living",
+        "links": [
+            "257fe6925f3fc27b"
+        ],
+        "x": 55,
+        "y": 1460,
+        "wires": [
+            [
+                "ca6bffc44239c6e2",
+                "f95868e5faa0f4e7",
+                "6475c95fe88d05ee",
+                "dbd0c7b881683d28"
+            ]
+        ]
+    },
+    {
+        "id": "747286db91f6b23f",
+        "type": "subflow:89caf20d92949c1d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ef7ed2121e92fdfa",
+        "name": "Temp_c Jsonify",
+        "x": 820,
+        "y": 500,
+        "wires": [
+            [
+                "b65638fae95e841e"
+            ]
+        ]
+    },
+    {
+        "id": "596e66cb46cb4429",
+        "type": "subflow:89caf20d92949c1d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "b2bfce452c2f17ab",
+        "name": "",
+        "x": 790,
+        "y": 1240,
+        "wires": [
+            [
+                "9df155ff4bcb3b06"
+            ]
+        ]
+    },
+    {
+        "id": "c80269e58e0c2728",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dd30ca31f460ade2",
+        "name": "Face Parser",
+        "func": "if (!msg.topic || !msg.topic.endsWith(\"face\")) {\n    return null; // ignore non-face topics\n}\n\nif (\n    !msg.payload ||\n    !Array.isArray(msg.payload.faces) ||\n    msg.payload.count == null\n) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing faces or count\" });\n    return null;\n}\n\nconst faces = msg.payload.faces;\nconst count = msg.payload.count;\n\n// Only output when count > 0\nif (count <= 0) {\n    node.status({ fill: \"grey\", shape: \"dot\", text: \"no faces detected\" });\n    return null;\n}\n\n// ✅ Make payload a single object { faces, count }\nconst outMsg = {\n    topic: msg.topic,\n    payload: { faces, count }\n};\n\nreturn outMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 230,
+        "y": 860,
+        "wires": [
+            [
+                "2a120a3bcdb4c062",
+                "94261ccd177fdede"
+            ]
+        ],
+        "outputLabels": [
+            "faces"
+        ]
+    },
+    {
+        "id": "6208cd5431e782f2",
+        "type": "subflow:3419fa2caa2ddfb4",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ec178797f8bef616",
+        "name": "",
+        "x": 1780,
+        "y": 500,
+        "wires": [
+            [
+                "5a27e1c1e2147382"
+            ]
+        ]
+    },
+    {
+        "id": "7be88ebabcbc5332",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ec178797f8bef616",
+        "name": "",
+        "topic": "homeA/bed1/temp/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2770,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "5a27e1c1e2147382",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ec178797f8bef616",
+        "group": "56bab64724f91665",
+        "name": "temp Slider",
+        "label": "Temp:",
+        "tooltip": "",
+        "order": 5,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "-10",
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 1950,
+        "y": 500,
+        "wires": [
+            [
+                "9c5b1fd1c899b418"
+            ]
+        ]
+    },
+    {
+        "id": "9c5b1fd1c899b418",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ec178797f8bef616",
+        "name": "bed1 Temp",
+        "group": "56bab64724f91665",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Room Temp",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-10",
+                "color": "#3352f0",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "-10",
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": "6",
+        "sizeKeyThickness": "8",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2130,
+        "y": 500,
+        "wires": [
+            [
+                "1e6794010076bb25"
+            ]
+        ]
+    },
+    {
+        "id": "6feee739a4305276",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ec178797f8bef616",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2530,
+        "y": 500,
+        "wires": [
+            [
+                "7be88ebabcbc5332"
+            ]
+        ]
+    },
+    {
+        "id": "1e6794010076bb25",
+        "type": "subflow:89caf20d92949c1d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "ec178797f8bef616",
+        "name": "",
+        "x": 2330,
+        "y": 500,
+        "wires": [
+            [
+                "6feee739a4305276"
+            ]
+        ]
+    },
+    {
+        "id": "c80649a6bb8b7cbe",
+        "type": "subflow:cc7c407e2d45384a",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "",
+        "x": 1770,
+        "y": 640,
+        "wires": [
+            [
+                "afd73ecc18672f38"
+            ],
+            [
+                "cba00f3c3cbf3e78"
+            ]
+        ]
+    },
+    {
+        "id": "9b0d87afa45fae29",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "",
+        "topic": "homeA/bed1/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2760,
+        "y": 600,
+        "wires": []
+    },
+    {
+        "id": "bc5d241ba2d74b1d",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "",
+        "topic": "homeA/bed1/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2760,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "cc12fa5ac9080601",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "lum jsonify",
+        "func": "msg.payload = { luminosity: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2330,
+        "y": 660,
+        "wires": [
+            [
+                "a022ec44aa7677cd"
+            ]
+        ]
+    },
+    {
+        "id": "cba00f3c3cbf3e78",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "group": "56bab64724f91665",
+        "name": "Lum Slider",
+        "label": "Lum:",
+        "tooltip": "",
+        "order": 7,
+        "width": 3,
+        "height": "1",
+        "passthru": true,
+        "outs": "end",
+        "topic": "lum",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 1930,
+        "y": 660,
+        "wires": [
+            [
+                "f103116047373a73",
+                "ddd3f8e65401d0f6",
+                "cc12fa5ac9080601"
+            ]
+        ]
+    },
+    {
+        "id": "afd73ecc18672f38",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "group": "56bab64724f91665",
+        "name": "tempk Slider",
+        "label": "tempK:",
+        "tooltip": "",
+        "order": 6,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "1000",
+        "max": "10000",
+        "step": "100",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 1930,
+        "y": 600,
+        "wires": [
+            [
+                "3a8a5c5cab3d4d1f"
+            ]
+        ]
+    },
+    {
+        "id": "3a8a5c5cab3d4d1f",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "bed1TempK",
+        "group": "56bab64724f91665",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Light",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "K",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "1000",
+                "color": "#ff3800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "2000",
+                "color": "#ff6b00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "3000",
+                "color": "#ffd700",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4000",
+                "color": "#fff4e5",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5000",
+                "color": "#ffffff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "6000",
+                "color": "#cfe9ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7000",
+                "color": "#a6d8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "8000",
+                "color": "#8cc8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "9000",
+                "color": "#75bfff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "10000",
+                "color": "#5ab4ff",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "1000",
+        "max": "10000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": "10",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2110,
+        "y": 600,
+        "wires": [
+            [
+                "66f038ccbb58bf08"
+            ]
+        ]
+    },
+    {
+        "id": "f103116047373a73",
+        "type": "ui-progress",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "group": "56bab64724f91665",
+        "name": "bed1_LUM",
+        "label": "Luminosity",
+        "order": 4,
+        "width": "",
+        "height": 0,
+        "color": "",
+        "className": "",
+        "x": 2110,
+        "y": 660,
+        "wires": []
+    },
+    {
+        "id": "66f038ccbb58bf08",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "temp_k jsonify",
+        "func": "msg.payload = { temp_k: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2340,
+        "y": 600,
+        "wires": [
+            [
+                "cb1c18a6c7612782"
+            ]
+        ]
+    },
+    {
+        "id": "a022ec44aa7677cd",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2530,
+        "y": 660,
+        "wires": [
+            [
+                "bc5d241ba2d74b1d"
+            ]
+        ]
+    },
+    {
+        "id": "cb1c18a6c7612782",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "1b77602425258d53",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2530,
+        "y": 600,
+        "wires": [
+            [
+                "9b0d87afa45fae29"
+            ]
+        ]
+    },
+    {
+        "id": "ddd3f8e65401d0f6",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bb403bb97116c27c",
+        "name": "MotionLight Logic",
+        "func": "// Save incoming values into node context\nif (msg.topic === \"lum\") {\n    context.set(\"lum\", Number(msg.payload));\n}\nif (msg.topic === \"motion\") {\n    context.set(\"motion\", !!msg.payload);\n}\n\n// Get latest values\nconst lum = context.get(\"lum\");\nconst motion = context.get(\"motion\");\n\n// Only continue if both exist\nif (lum === null || lum === undefined || motion === null || motion === undefined) {\n    node.status({ fill: \"grey\", shape: \"ring\", text: \"waiting for lum+motion…\" });\n    return null;\n}\n\n// --- Logic ---\nif (motion && lum < 1) {\n    context.set(\"lum\", 100);\n\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Motion → Lum set to 100\" });\n    return { payload: 100, topic: \"lum\" };\n}\n\n// Otherwise output current state\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: `L:${lum} M:${motion}`\n});\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nconst lum = 0\nconst motion = false",
+        "finalize": "",
+        "libs": [],
+        "x": 2270,
+        "y": 760,
+        "wires": [
+            [
+                "cba00f3c3cbf3e78"
+            ]
+        ]
+    },
+    {
+        "id": "655356ac45365fe4",
+        "type": "subflow:9442d67fc7e0212d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bb403bb97116c27c",
+        "name": "",
+        "x": 1790,
+        "y": 760,
+        "wires": [
+            [
+                "d11bb84d24da370a",
+                "61be904772959899"
+            ]
+        ]
+    },
+    {
+        "id": "f1ecb3dd3c8f8a97",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bb403bb97116c27c",
+        "name": "",
+        "topic": "homeA/bed1/motion/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2870,
+        "y": 760,
+        "wires": []
+    },
+    {
+        "id": "3061292c954fe98c",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bb403bb97116c27c",
+        "name": "motion jsonify",
+        "func": "msg.payload = { motion: msg.payload }; \n// change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2500,
+        "y": 760,
+        "wires": [
+            [
+                "f310ce47452c86bd"
+            ]
+        ]
+    },
+    {
+        "id": "d11bb84d24da370a",
+        "type": "ui-switch",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bb403bb97116c27c",
+        "name": "bed1 Motion Switch",
+        "label": "Motion",
+        "group": "56bab64724f91665",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": false,
+        "topic": "motion",
+        "topicType": "str",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 2030,
+        "y": 760,
+        "wires": [
+            [
+                "ddd3f8e65401d0f6",
+                "3061292c954fe98c"
+            ]
+        ]
+    },
+    {
+        "id": "f310ce47452c86bd",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "bb403bb97116c27c",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2690,
+        "y": 760,
+        "wires": [
+            [
+                "f1ecb3dd3c8f8a97"
+            ]
+        ]
+    },
+    {
+        "id": "9e3320e48a4b8be9",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "Face Parser",
+        "func": "if (!msg.topic || !msg.topic.endsWith(\"face\")) {\n    return null; // ignore non-face topics\n}\n\nif (\n    !msg.payload ||\n    !Array.isArray(msg.payload.faces) ||\n    msg.payload.count == null\n) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing faces or count\" });\n    return null;\n}\n\nconst faces = msg.payload.faces;\nconst count = msg.payload.count;\n\n// Only output when count > 0\nif (count <= 0) {\n    node.status({ fill: \"grey\", shape: \"dot\", text: \"no faces detected\" });\n    return null;\n}\n\n// ✅ Make payload a single object { faces, count }\nconst outMsg = {\n    topic: msg.topic,\n    payload: { faces, count }\n};\n\nreturn outMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1770,
+        "y": 860,
+        "wires": [
+            [
+                "97560c388bb832a0",
+                "61be904772959899"
+            ]
+        ],
+        "outputLabels": [
+            "faces"
+        ]
+    },
+    {
+        "id": "97560c388bb832a0",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "",
+        "topic": "homeA/bed1/faceData",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1960,
+        "y": 900,
+        "wires": []
+    },
+    {
+        "id": "e2904f7ddcfdd889",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "",
+        "topic": "homeA/bed1/FaceNames",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 2210,
+        "y": 900,
+        "wires": [
+            [
+                "61be904772959899",
+                "a1478b557bacb1fd"
+            ]
+        ]
+    },
+    {
+        "id": "61be904772959899",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "FaceCounter",
+        "func": "// Node-RED Function: merge face count & names (+ motion gate)\nlet fcount = context.get(\"fcount\") ?? null;\nlet ncount = context.get(\"ncount\") ?? null;\nlet names  = context.get(\"names\")  ?? null;\nlet motion = context.get(\"motion\");  // true | false | undefined\n\n// helper to display current state\nfunction showStatus(color, shape, msg) {\n  const nameCount = Array.isArray(names) ? names.length : 0;\n  node.status({\n    fill: color,\n    shape: shape,\n    text: msg\n  });\n}\n\n// --- MOTION topic ---\nif (msg.topic.endsWith(\"/motion\")) {\n  const v = msg?.payload?.motion ?? msg?.payload?.active ?? msg?.payload;\n  const m = (v === true || v === 1 || v === \"1\" || v === \"true\");\n  motion = m;\n  context.set(\"motion\", motion);\n\n  if (!motion) {\n    context.set(\"fcount\", null);\n    context.set(\"ncount\", null);\n    context.set(\"names\", null);\n    showStatus(\"grey\", \"dot\", \"motion off\");\n    return { payload: \"\" };\n  }\n\n  showStatus(\"green\", \"dot\", \"motion on\");\n  return null;\n}\n\n// --- FACE topic ---\nif (msg.topic.endsWith(\"/face\")) {\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  fcount = c;\n  context.set(\"fcount\", fcount);\n  showStatus(\"blue\", \"ring\", \"updated face count\");\n}\n\n// --- FaceNames topic ---\nelse if (msg.topic.endsWith(\"/FaceNames\")) {\n  const arr = Array.isArray(msg?.payload?.names) ? msg.payload.names : [];\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  names = arr;\n  ncount = c;\n  context.set(\"names\", names);\n  context.set(\"ncount\", ncount);\n  showStatus(\"blue\", \"ring\", \"updated FaceNames\");\n} else {\n  return null; // ignore unrelated topics\n}\n\n// --- Check all variables exist ---\nif (fcount == null || ncount == null || names == null || motion == null) {\n  showStatus(\"yellow\", \"dot\", \"waiting for all inputs\");\n  return null;\n}\n\n// --- Final check ---\nif (motion === true && fcount > 0 && ncount > 0 && fcount === ncount && Array.isArray(names)) {\n  const firstWords = names.map(n => String(n).trim().split(/\\s+/)[0]).join(\", \");\n  showStatus(\"green\", \"dot\", `showing ${fcount} faces`);\n\n  return { payload: firstWords };\n}\n\n// --- Fallback ---\nshowStatus(\"grey\", \"dot\", \"no output\");\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "0",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2490,
+        "y": 860,
+        "wires": [
+            [
+                "eafc447da6f6f710"
+            ]
+        ]
+    },
+    {
+        "id": "5e18ffe8d2eb3fb5",
+        "type": "ui-text",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "group": "56bab64724f91665",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "bed1 Detected",
+        "label": "Detected:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 2800,
+        "y": 860,
+        "wires": []
+    },
+    {
+        "id": "eafc447da6f6f710",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2650,
+        "y": 860,
+        "wires": [
+            [
+                "5e18ffe8d2eb3fb5"
+            ]
+        ]
+    },
+    {
+        "id": "a1478b557bacb1fd",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "users filter",
+        "func": "// Node-RED Function: extract users from payload\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n  node.status({ fill: \"red\", shape: \"dot\", text: \"invalid payload\" });\n  return null;\n}\n\nconst user_moods = msg.payload.user_moods;\n\nif (!Array.isArray(user_moods)) {\n  node.status({ fill: \"yellow\", shape: \"ring\", text: \"no users found\" });\n  return null;\n}\n\nnode.status({ fill: \"green\", shape: \"dot\", text: `users: ${user_moods.length}` });\nreturn { payload: user_moods };\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2430,
+        "y": 940,
+        "wires": [
+            [
+                "ea6f016c5a408d92"
+            ]
+        ]
+    },
+    {
+        "id": "54e2b20206a9f783",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "",
+        "topic": "homeA/bed1/mood/in",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2740,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "ea6f016c5a408d92",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2570,
+        "y": 940,
+        "wires": [
+            [
+                "54e2b20206a9f783"
+            ]
+        ]
+    },
+    {
+        "id": "1565e37767cc172b",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "",
+        "topic": "homeA/bed1/mood/out",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 2620,
+        "y": 1020,
+        "wires": [
+            [
+                "32726ef64fca93ec"
+            ]
+        ]
+    },
+    {
+        "id": "32726ef64fca93ec",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "709082604f55a361",
+        "name": "Aggregator",
+        "func": "// Input example:\n// { \"temp_c\": 23, \"temp_k\": 296, \"luminosity\": 63 }\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n    node.status({ fill: \"red\", shape: \"dot\", text: \"no or invalid payload\" });\n    return [null, null, null];\n}\n\nconst { temp_c, temp_k, luminosity } = msg.payload;\n\n// Validate values\nif (temp_c == null || temp_k == null || luminosity == null) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing values\" });\n    return [null, null, null];\n}\n\n// Each output as its own named object in payload\nconst msg1 = { payload: { temp_c } };\nconst msg2 = { payload: { temp_k } };\nconst msg3 = { payload: { luminosity } };\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `C:${temp_c} K:${temp_k} L:${luminosity}`\n});\n\nreturn [msg1, msg2, msg3];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2870,
+        "y": 1020,
+        "wires": [
+            [
+                "6feee739a4305276"
+            ],
+            [
+                "cb1c18a6c7612782"
+            ],
+            [
+                "a022ec44aa7677cd"
+            ]
+        ]
+    },
+    {
+        "id": "da19354bb06fb629",
+        "type": "link in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "c350c68753885cd2",
+        "name": "Bed1 In",
+        "links": [
+            "c81067db3ba30323"
+        ],
+        "x": 1595,
+        "y": 720,
+        "wires": [
+            [
+                "6208cd5431e782f2",
+                "c80649a6bb8b7cbe",
+                "655356ac45365fe4",
+                "9e3320e48a4b8be9"
+            ]
+        ]
+    },
+    {
+        "id": "c81067db3ba30323",
+        "type": "link out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Bed1 out",
+        "mode": "link",
+        "links": [
+            "da19354bb06fb629"
+        ],
+        "x": 285,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "4863a23157efb1fa",
+        "type": "subflow:3419fa2caa2ddfb4",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dfea40f9d3747423",
+        "name": "",
+        "x": 1780,
+        "y": 1240,
+        "wires": [
+            [
+                "9a4e66d064fe30b3"
+            ]
+        ]
+    },
+    {
+        "id": "6b223d4578f8563f",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dfea40f9d3747423",
+        "name": "",
+        "topic": "homeA/bed2/temp/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2770,
+        "y": 1240,
+        "wires": []
+    },
+    {
+        "id": "9a4e66d064fe30b3",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dfea40f9d3747423",
+        "group": "4e79c10168d7648e",
+        "name": "temp Slider",
+        "label": "Temp:",
+        "tooltip": "",
+        "order": 5,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "-10",
+        "max": "50",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 1950,
+        "y": 1240,
+        "wires": [
+            [
+                "bac288f843b8c089"
+            ]
+        ]
+    },
+    {
+        "id": "bac288f843b8c089",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dfea40f9d3747423",
+        "name": "bed2 Temp",
+        "group": "4e79c10168d7648e",
+        "order": 2,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "3",
+        "gtype": "gauge-34",
+        "gstyle": "needle",
+        "title": "Room Temp",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "°C",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "-10",
+                "color": "#3352f0",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5",
+                "color": "#5cd65c",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "28",
+                "color": "#ffc800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "40",
+                "color": "#ea5353",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "-10",
+        "max": "50",
+        "sizeThickness": 16,
+        "sizeGap": "6",
+        "sizeKeyThickness": "8",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2130,
+        "y": 1240,
+        "wires": [
+            [
+                "807b0ff253b9c357"
+            ]
+        ]
+    },
+    {
+        "id": "84d06be18570e9f6",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dfea40f9d3747423",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2530,
+        "y": 1240,
+        "wires": [
+            [
+                "6b223d4578f8563f"
+            ]
+        ]
+    },
+    {
+        "id": "807b0ff253b9c357",
+        "type": "subflow:89caf20d92949c1d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "dfea40f9d3747423",
+        "name": "",
+        "x": 2330,
+        "y": 1240,
+        "wires": [
+            [
+                "84d06be18570e9f6"
+            ]
+        ]
+    },
+    {
+        "id": "df92d23418c4c06e",
+        "type": "subflow:cc7c407e2d45384a",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "",
+        "x": 1770,
+        "y": 1380,
+        "wires": [
+            [
+                "693eb7dc9d5990ce"
+            ],
+            [
+                "b95b944a4cd615c1"
+            ]
+        ]
+    },
+    {
+        "id": "89402860d12e0468",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "",
+        "topic": "homeA/bed2/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2760,
+        "y": 1340,
+        "wires": []
+    },
+    {
+        "id": "020c5847e41e58cd",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "",
+        "topic": "homeA/bed2/light/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2760,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "b30e0e110aacd9cf",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "lum jsonify",
+        "func": "msg.payload = { luminosity: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2330,
+        "y": 1400,
+        "wires": [
+            [
+                "58995f5170f7502d"
+            ]
+        ]
+    },
+    {
+        "id": "b95b944a4cd615c1",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "group": "4e79c10168d7648e",
+        "name": "Lum Slider",
+        "label": "Lum:",
+        "tooltip": "",
+        "order": 7,
+        "width": 3,
+        "height": "1",
+        "passthru": true,
+        "outs": "end",
+        "topic": "lum",
+        "topicType": "str",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": 0,
+        "max": "100",
+        "step": 1,
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 1930,
+        "y": 1400,
+        "wires": [
+            [
+                "4182195fa7332b41",
+                "0eee267680722be9",
+                "b30e0e110aacd9cf"
+            ]
+        ]
+    },
+    {
+        "id": "693eb7dc9d5990ce",
+        "type": "ui-slider",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "group": "4e79c10168d7648e",
+        "name": "tempk Slider",
+        "label": "tempK:",
+        "tooltip": "",
+        "order": 6,
+        "width": 3,
+        "height": 0,
+        "passthru": true,
+        "outs": "end",
+        "topic": "topic",
+        "topicType": "msg",
+        "thumbLabel": "true",
+        "showTicks": "always",
+        "min": "1000",
+        "max": "10000",
+        "step": "100",
+        "className": "",
+        "iconPrepend": "",
+        "iconAppend": "",
+        "color": "",
+        "colorTrack": "",
+        "colorThumb": "",
+        "showTextField": false,
+        "x": 1930,
+        "y": 1340,
+        "wires": [
+            [
+                "32dbd3c78a49bd67"
+            ]
+        ]
+    },
+    {
+        "id": "32dbd3c78a49bd67",
+        "type": "ui-gauge",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "bed2TempK",
+        "group": "4e79c10168d7648e",
+        "order": 3,
+        "value": "payload",
+        "valueType": "msg",
+        "width": "3",
+        "height": "1",
+        "gtype": "gauge-tile",
+        "gstyle": "needle",
+        "title": "Light",
+        "alwaysShowTitle": false,
+        "floatingTitlePosition": "top-left",
+        "units": "K",
+        "icon": "",
+        "prefix": "",
+        "suffix": "",
+        "segments": [
+            {
+                "from": "1000",
+                "color": "#ff3800",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "2000",
+                "color": "#ff6b00",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "3000",
+                "color": "#ffd700",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "4000",
+                "color": "#fff4e5",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "5000",
+                "color": "#ffffff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "6000",
+                "color": "#cfe9ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "7000",
+                "color": "#a6d8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "8000",
+                "color": "#8cc8ff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "9000",
+                "color": "#75bfff",
+                "text": "",
+                "textType": "label"
+            },
+            {
+                "from": "10000",
+                "color": "#5ab4ff",
+                "text": "",
+                "textType": "label"
+            }
+        ],
+        "min": "1000",
+        "max": "10000",
+        "sizeThickness": 16,
+        "sizeGap": 4,
+        "sizeKeyThickness": "10",
+        "styleRounded": true,
+        "styleGlow": false,
+        "className": "",
+        "x": 2110,
+        "y": 1340,
+        "wires": [
+            [
+                "91ebf9c6f8558685"
+            ]
+        ]
+    },
+    {
+        "id": "4182195fa7332b41",
+        "type": "ui-progress",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "group": "4e79c10168d7648e",
+        "name": "bed2_LUM",
+        "label": "Luminosity",
+        "order": 4,
+        "width": "",
+        "height": 0,
+        "color": "",
+        "className": "",
+        "x": 2110,
+        "y": 1400,
+        "wires": []
+    },
+    {
+        "id": "91ebf9c6f8558685",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "temp_k jsonify",
+        "func": "msg.payload = { temp_k: msg.payload };   // change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2340,
+        "y": 1340,
+        "wires": [
+            [
+                "ab462d6325ee1dc3"
+            ]
+        ]
+    },
+    {
+        "id": "58995f5170f7502d",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2530,
+        "y": 1400,
+        "wires": [
+            [
+                "020c5847e41e58cd"
+            ]
+        ]
+    },
+    {
+        "id": "ab462d6325ee1dc3",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "28626ccf091a8e33",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2530,
+        "y": 1340,
+        "wires": [
+            [
+                "89402860d12e0468"
+            ]
+        ]
+    },
+    {
+        "id": "0eee267680722be9",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7ec56f7ebb82edcd",
+        "name": "MotionLight Logic",
+        "func": "// Save incoming values into node context\nif (msg.topic === \"lum\") {\n    context.set(\"lum\", Number(msg.payload));\n}\nif (msg.topic === \"motion\") {\n    context.set(\"motion\", !!msg.payload);\n}\n\n// Get latest values\nconst lum = context.get(\"lum\");\nconst motion = context.get(\"motion\");\n\n// Only continue if both exist\nif (lum === null || lum === undefined || motion === null || motion === undefined) {\n    node.status({ fill: \"grey\", shape: \"ring\", text: \"waiting for lum+motion…\" });\n    return null;\n}\n\n// --- Logic ---\nif (motion && lum < 1) {\n    context.set(\"lum\", 100);\n\n    node.status({ fill: \"green\", shape: \"dot\", text: \"Motion → Lum set to 100\" });\n    return { payload: 100, topic: \"lum\" };\n}\n\n// Otherwise output current state\nnode.status({\n    fill: \"blue\",\n    shape: \"dot\",\n    text: `L:${lum} M:${motion}`\n});\n\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "// Code added here will be run once\n// whenever the node is started.\nconst lum = 0\nconst motion = false",
+        "finalize": "",
+        "libs": [],
+        "x": 2270,
+        "y": 1500,
+        "wires": [
+            [
+                "b95b944a4cd615c1"
+            ]
+        ]
+    },
+    {
+        "id": "1f2d364e2ac25c9d",
+        "type": "subflow:9442d67fc7e0212d",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7ec56f7ebb82edcd",
+        "name": "",
+        "x": 1790,
+        "y": 1500,
+        "wires": [
+            [
+                "2d137993c3dddbe8",
+                "392ab521ca764a36"
+            ]
+        ]
+    },
+    {
+        "id": "c2a0bd6f3c33e51c",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7ec56f7ebb82edcd",
+        "name": "",
+        "topic": "homeA/bed2/motion/cmd",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2870,
+        "y": 1500,
+        "wires": []
+    },
+    {
+        "id": "889289dd105cf161",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7ec56f7ebb82edcd",
+        "name": "motion jsonify",
+        "func": "msg.payload = { motion: msg.payload }; \n// change key to what your sensor expects\nreturn msg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2500,
+        "y": 1500,
+        "wires": [
+            [
+                "e56205b26b483e3f"
+            ]
+        ]
+    },
+    {
+        "id": "2d137993c3dddbe8",
+        "type": "ui-switch",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7ec56f7ebb82edcd",
+        "name": "bed2 Motion Switch",
+        "label": "Motion",
+        "group": "4e79c10168d7648e",
+        "order": 1,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": false,
+        "topic": "motion",
+        "topicType": "str",
+        "style": "",
+        "className": "",
+        "layout": "row-spread",
+        "clickableArea": "switch",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "x": 2030,
+        "y": 1500,
+        "wires": [
+            [
+                "0eee267680722be9",
+                "889289dd105cf161"
+            ]
+        ]
+    },
+    {
+        "id": "e56205b26b483e3f",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "7ec56f7ebb82edcd",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2690,
+        "y": 1500,
+        "wires": [
+            [
+                "c2a0bd6f3c33e51c"
+            ]
+        ]
+    },
+    {
+        "id": "c7347faf659557fb",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "Face Parser",
+        "func": "if (!msg.topic || !msg.topic.endsWith(\"face\")) {\n    return null; // ignore non-face topics\n}\n\nif (\n    !msg.payload ||\n    !Array.isArray(msg.payload.faces) ||\n    msg.payload.count == null\n) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing faces or count\" });\n    return null;\n}\n\nconst faces = msg.payload.faces;\nconst count = msg.payload.count;\n\n// Only output when count > 0\nif (count <= 0) {\n    node.status({ fill: \"grey\", shape: \"dot\", text: \"no faces detected\" });\n    return null;\n}\n\n// ✅ Make payload a single object { faces, count }\nconst outMsg = {\n    topic: msg.topic,\n    payload: { faces, count }\n};\n\nreturn outMsg;\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 1770,
+        "y": 1600,
+        "wires": [
+            [
+                "bb88fbf2a2ab24be",
+                "392ab521ca764a36"
+            ]
+        ],
+        "outputLabels": [
+            "faces"
+        ]
+    },
+    {
+        "id": "bb88fbf2a2ab24be",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "",
+        "topic": "homeA/bed2/faceData",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 1960,
+        "y": 1640,
+        "wires": []
+    },
+    {
+        "id": "41ac989ba1fbbf2a",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "",
+        "topic": "homeA/bed2/FaceNames",
+        "qos": "2",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 2210,
+        "y": 1640,
+        "wires": [
+            [
+                "392ab521ca764a36",
+                "ab572e5ac9708c14"
+            ]
+        ]
+    },
+    {
+        "id": "392ab521ca764a36",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "FaceCounter",
+        "func": "// Node-RED Function: merge face count & names (+ motion gate)\nlet fcount = context.get(\"fcount\") ?? null;\nlet ncount = context.get(\"ncount\") ?? null;\nlet names  = context.get(\"names\")  ?? null;\nlet motion = context.get(\"motion\");  // true | false | undefined\n\n// helper to display current state\nfunction showStatus(color, shape, msg) {\n  const nameCount = Array.isArray(names) ? names.length : 0;\n  node.status({\n    fill: color,\n    shape: shape,\n    text: msg\n  });\n}\n\n// --- MOTION topic ---\nif (msg.topic.endsWith(\"/motion\")) {\n  const v = msg?.payload?.motion ?? msg?.payload?.active ?? msg?.payload;\n  const m = (v === true || v === 1 || v === \"1\" || v === \"true\");\n  motion = m;\n  context.set(\"motion\", motion);\n\n  if (!motion) {\n    context.set(\"fcount\", null);\n    context.set(\"ncount\", null);\n    context.set(\"names\", null);\n    showStatus(\"grey\", \"dot\", \"motion off\");\n    return { payload: \"\" };\n  }\n\n  showStatus(\"green\", \"dot\", \"motion on\");\n  return null;\n}\n\n// --- FACE topic ---\nif (msg.topic.endsWith(\"/face\")) {\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  fcount = c;\n  context.set(\"fcount\", fcount);\n  showStatus(\"blue\", \"ring\", \"updated face count\");\n}\n\n// --- FaceNames topic ---\nelse if (msg.topic.endsWith(\"/FaceNames\")) {\n  const arr = Array.isArray(msg?.payload?.names) ? msg.payload.names : [];\n  const c = Number(msg?.payload?.count);\n  if (!Number.isFinite(c)) return null;\n  names = arr;\n  ncount = c;\n  context.set(\"names\", names);\n  context.set(\"ncount\", ncount);\n  showStatus(\"blue\", \"ring\", \"updated FaceNames\");\n} else {\n  return null; // ignore unrelated topics\n}\n\n// --- Check all variables exist ---\nif (fcount == null || ncount == null || names == null || motion == null) {\n  showStatus(\"yellow\", \"dot\", \"waiting for all inputs\");\n  return null;\n}\n\n// --- Final check ---\nif (motion === true && fcount > 0 && ncount > 0 && fcount === ncount && Array.isArray(names)) {\n  const firstWords = names.map(n => String(n).trim().split(/\\s+/)[0]).join(\", \");\n  showStatus(\"green\", \"dot\", `showing ${fcount} faces`);\n\n  return { payload: firstWords };\n}\n\n// --- Fallback ---\nshowStatus(\"grey\", \"dot\", \"no output\");\nreturn null;\n",
+        "outputs": 1,
+        "timeout": "0",
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2490,
+        "y": 1600,
+        "wires": [
+            [
+                "560b981004fc53bc"
+            ]
+        ]
+    },
+    {
+        "id": "41f269deea17bf0d",
+        "type": "ui-text",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "group": "4e79c10168d7648e",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "name": "bed2 Detected",
+        "label": "Detected:",
+        "format": "{{msg.payload}}",
+        "layout": "row-left",
+        "style": false,
+        "font": "",
+        "fontSize": 16,
+        "color": "#717171",
+        "wrapText": false,
+        "className": "",
+        "value": "payload",
+        "valueType": "msg",
+        "x": 2800,
+        "y": 1600,
+        "wires": []
+    },
+    {
+        "id": "560b981004fc53bc",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2650,
+        "y": 1600,
+        "wires": [
+            [
+                "41f269deea17bf0d"
+            ]
+        ]
+    },
+    {
+        "id": "ab572e5ac9708c14",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "users filter",
+        "func": "// Node-RED Function: extract users from payload\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n  node.status({ fill: \"red\", shape: \"dot\", text: \"invalid payload\" });\n  return null;\n}\n\nconst user_moods = msg.payload.user_moods;\n\nif (!Array.isArray(user_moods)) {\n  node.status({ fill: \"yellow\", shape: \"ring\", text: \"no users found\" });\n  return null;\n}\n\nnode.status({ fill: \"green\", shape: \"dot\", text: `users: ${user_moods.length}` });\nreturn { payload: user_moods };\n",
+        "outputs": 1,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2430,
+        "y": 1680,
+        "wires": [
+            [
+                "cecff1b5908406fc"
+            ]
+        ]
+    },
+    {
+        "id": "2efbd74cb8488fd1",
+        "type": "mqtt out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "",
+        "topic": "homeA/bed2/mood/in",
+        "qos": "",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "98c981e815a90e23",
+        "x": 2740,
+        "y": 1680,
+        "wires": []
+    },
+    {
+        "id": "cecff1b5908406fc",
+        "type": "rbe",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "",
+        "func": "rbe",
+        "gap": "",
+        "start": "",
+        "inout": "out",
+        "septopics": true,
+        "property": "payload",
+        "topi": "topic",
+        "x": 2570,
+        "y": 1680,
+        "wires": [
+            [
+                "2efbd74cb8488fd1"
+            ]
+        ]
+    },
+    {
+        "id": "0f7f91f3aff32ed5",
+        "type": "mqtt in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "",
+        "topic": "homeA/bed2/mood/out",
+        "qos": "0",
+        "datatype": "auto-detect",
+        "broker": "98c981e815a90e23",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "inputs": 0,
+        "x": 2620,
+        "y": 1760,
+        "wires": [
+            [
+                "1848cec5453b1b84"
+            ]
+        ]
+    },
+    {
+        "id": "1848cec5453b1b84",
+        "type": "function",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "6574ec0525214251",
+        "name": "Aggregator",
+        "func": "// Input example:\n// { \"temp_c\": 23, \"temp_k\": 296, \"luminosity\": 63 }\n\nif (!msg.payload || typeof msg.payload !== \"object\") {\n    node.status({ fill: \"red\", shape: \"dot\", text: \"no or invalid payload\" });\n    return [null, null, null];\n}\n\nconst { temp_c, temp_k, luminosity } = msg.payload;\n\n// Validate values\nif (temp_c == null || temp_k == null || luminosity == null) {\n    node.status({ fill: \"yellow\", shape: \"dot\", text: \"missing values\" });\n    return [null, null, null];\n}\n\n// Each output as its own named object in payload\nconst msg1 = { payload: { temp_c } };\nconst msg2 = { payload: { temp_k } };\nconst msg3 = { payload: { luminosity } };\n\nnode.status({\n    fill: \"green\",\n    shape: \"dot\",\n    text: `C:${temp_c} K:${temp_k} L:${luminosity}`\n});\n\nreturn [msg1, msg2, msg3];\n",
+        "outputs": 3,
+        "timeout": 0,
+        "noerr": 0,
+        "initialize": "",
+        "finalize": "",
+        "libs": [],
+        "x": 2870,
+        "y": 1760,
+        "wires": [
+            [
+                "84d06be18570e9f6"
+            ],
+            [
+                "ab462d6325ee1dc3"
+            ],
+            [
+                "58995f5170f7502d"
+            ]
+        ]
+    },
+    {
+        "id": "c4a2f3f7b4076d59",
+        "type": "link in",
+        "z": "b1f9f7b4f8aa1f3a",
+        "g": "548f9a0ce0fff73d",
+        "name": "Bed2 In",
+        "links": [
+            "f142df6cc000b658"
+        ],
+        "x": 1595,
+        "y": 1460,
+        "wires": [
+            [
+                "4863a23157efb1fa",
+                "df92d23418c4c06e",
+                "1f2d364e2ac25c9d",
+                "c7347faf659557fb"
+            ]
+        ]
+    },
+    {
+        "id": "f142df6cc000b658",
+        "type": "link out",
+        "z": "b1f9f7b4f8aa1f3a",
+        "name": "Bed2 out",
+        "mode": "link",
+        "links": [
+            "c4a2f3f7b4076d59"
+        ],
+        "x": 285,
+        "y": 400,
+        "wires": []
+    }
+]

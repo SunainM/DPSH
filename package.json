@@ -1,0 +1,28 @@
+{
+  "name": "projectsmarthome",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "sensors": "npm-run-all --parallel temp motion light face",
+    "temp": "node src/sensors/sims/temp.sim.js",
+    "motion": "node src/sensors/sims/motion.sim.js",
+    "light": "node src/sensors/sims/light.sim.js",
+    "face": "node src/sensors/sims/facecam.sim.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "dayjs": "^1.11.18",
+    "dotenv": "^17.2.3",
+    "mongodb": "^6.20.0",
+    "mqtt": "^5.14.1",
+    "nanoid": "^5.1.6",
+    "uuid": "^12.0.0"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
