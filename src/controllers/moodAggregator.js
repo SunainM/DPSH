@@ -3,12 +3,14 @@ const { MongoClient } = require("mongodb");
 const path = require("path");
 require("dotenv").config({ path: path.resolve(__dirname, "../../.env") });
 
+const { averageMoods } = require("../common/moodAverage");
+
 // --- CONFIG ---
 const BROKER_URL = process.env.BROKER_URL || "mqtt://localhost:1883";
-const MONGO_URL = process.env.MONGO_URL;
+const MONGO_URL  = process.env.MONGO_URL;
 if (!MONGO_URL) throw new Error("MONGO_URL env var is required (hosted Mongo URI).");
 
-const DB_NAME = process.env.DB_NAME || "smarthome";
+const DB_NAME   = process.env.DB_NAME   || "smarthome";
 const MOOD_COLL = process.env.MOOD_COLL || "moods";
 
 // MQTT topics
@@ -37,7 +39,6 @@ const PUB_TOPIC = (room) => `homeA/${room}/mood/out`;
 
   client.on("error", (err) => console.error("MQTT Error:", err));
 
-  // --- MAIN MESSAGE HANDLER ---
   client.on("message", async (topic, message) => {
     try {
       const payload = JSON.parse(message.toString());
@@ -47,36 +48,21 @@ const PUB_TOPIC = (room) => `homeA/${room}/mood/out`;
       }
 
       const parts = topic.split("/");
-      const room = parts[1] || "unknown";
+      const room  = parts[1] || "unknown";
 
-      let totalC = 0,
-        totalK = 0,
-        totalLum = 0,
-        count = 0;
-
+      // Fetch mood preferences for each user
+      const resolved = [];
       for (const user of payload) {
         const doc = await moodsCol.findOne({ user_id: user.id });
-        if (!doc || !doc.moods || !doc.moods[user.mood]) continue;
-
-        const moodObj = doc.moods[user.mood];
-        if (moodObj.temp_c == null || moodObj.temp_k == null || moodObj.luminosity == null) continue;
-
-        totalC += Number(moodObj.temp_c);
-        totalK += Number(moodObj.temp_k);
-        totalLum += Number(moodObj.luminosity);
-        count++;
+        if (!doc?.moods?.[user.mood]) continue;
+        resolved.push(doc.moods[user.mood]);
       }
 
-      if (count === 0) {
+      const avg = averageMoods(resolved);
+      if (!avg) {
         console.warn("⚠️ No valid mood entries found for averaging.");
         return;
       }
-
-      const avg = {
-        temp_c: Number((totalC / count).toFixed(1)),
-        temp_k: Math.round(totalK / count),
-        luminosity: Math.round(totalLum / count),
-      };
 
       const outTopic = PUB_TOPIC(room);
       client.publish(outTopic, JSON.stringify(avg), { qos: 0 });
@@ -86,7 +72,6 @@ const PUB_TOPIC = (room) => `homeA/${room}/mood/out`;
     }
   });
 
-  // --- CLEANUP ---
   process.on("SIGINT", async () => {
     console.log("\n🛑 Shutting down...");
     await mongoClient.close();

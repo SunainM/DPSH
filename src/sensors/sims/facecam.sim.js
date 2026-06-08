@@ -6,6 +6,7 @@ const mqtt = require("mqtt");
 const args = require("minimist")(process.argv.slice(2));
 const facesFile = path.resolve(__dirname, "faces.txt");
 require("dotenv").config({ path: path.resolve(__dirname, "../../../.env") });
+const { hashFace } = require("../../common/hashFace");
 
 
 const roomsDir = path.resolve(__dirname, "../rooms");
@@ -47,28 +48,6 @@ const client = mqtt.connect(process.env.BROKER_URL || broker, {
   connectTimeout: 10000,
   reconnectPeriod: 2000,
 });
-
-// ---------- Hashing (64x64x3 RGB, FNV-1a 32-bit) ----------
-const FNV_OFFSET = 0x811c9dc5;
-const FNV_PRIME = 0x01000193;
-function hashFace(face) {
-  // face: 64x64x3 -> face[y][x] = [r,g,b]
-  let h = FNV_OFFSET >>> 0;
-  // assume camRes=64; if different, still iterate face.length/row.length
-  for (let y = 0; y < face.length; y++) {
-    const row = face[y];
-    for (let x = 0; x < row.length; x++) {
-      const [r, g, b] = row[x];
-      h ^= r & 0xff;
-      h = (h * FNV_PRIME) >>> 0;
-      h ^= g & 0xff;
-      h = (h * FNV_PRIME) >>> 0;
-      h ^= b & 0xff;
-      h = (h * FNV_PRIME) >>> 0;
-    }
-  }
-  return ("00000000" + h.toString(16)).slice(-8);
-}
 
 // ---------- State ----------
 const visible = []; // array of face arrays

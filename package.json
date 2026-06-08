@@ -4,6 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "test": "jest --coverage",
+    "check": "node src/common/preflightCheck.js",
     "sensors": "npm-run-all --parallel temp motion light face",
     "temp": "node src/sensors/sims/temp.sim.js",
     "motion": "node src/sensors/sims/motion.sim.js",
@@ -24,6 +26,16 @@
     "uuid": "^12.0.0"
   },
   "devDependencies": {
+    "jest": "^29.0.0",
     "npm-run-all": "^4.1.5"
+  },
+  "jest": {
+    "testEnvironment": "node",
+    "testMatch": ["**/*.test.js"],
+    "coverageDirectory": "coverage",
+    "collectCoverageFrom": [
+      "src/common/*.js",
+      "src/controllers/*.js"
+    ]
   }
 }

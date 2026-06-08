@@ -1,0 +1,81 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    name: Unit & Integration Tests
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Run tests
+        run: npm test
+
+  preflight:
+    name: Deployment Pre-flight Check
+    runs-on: ubuntu-latest
+    # Only run on pushes to main/master (not on every PR)
+    if: github.event_name == 'push' && (github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master')
+    needs: test
+
+    services:
+      mosquitto:
+        image: eclipse-mosquitto:2
+        ports:
+          - 1883:1883
+        volumes:
+          - /tmp/mosquitto.conf:/mosquitto/config/mosquitto.conf
+        options: >-
+          --health-cmd "mosquitto_pub -h localhost -t _health -m ping -q 0 || exit 1"
+          --health-interval 5s
+          --health-timeout 3s
+          --health-retries 10
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm"
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Write Mosquitto config (allow anonymous)
+        run: |
+          mkdir -p /tmp/mosquitto
+          echo -e "listener 1883\nallow_anonymous true" > /tmp/mosquitto.conf
+
+      - name: Env var check
+        run: |
+          node -e "
+            const { checkRequiredEnv } = require('./src/common/envCheck');
+            const { ok, missing } = checkRequiredEnv(['BROKER_URL'], process.env);
+            if (!ok) { console.error('Missing:', missing); process.exit(1); }
+            console.log('Env OK');
+          "
+        env:
+          BROKER_URL: mqtt://localhost:1883
+
+      - name: MQTT connectivity check
+        run: |
+          node -e "
+            const mqtt = require('mqtt');
+            const client = mqtt.connect('mqtt://localhost:1883', { connectTimeout: 5000, reconnectPeriod: 0 });
+            client.on('connect', () => { console.log('MQTT OK'); client.end(true); process.exit(0); });
+            client.on('error',   (e) => { console.error('MQTT error:', e.message); process.exit(1); });
+            setTimeout(() => { console.error('MQTT timeout'); process.exit(1); }, 6000);
+          "
