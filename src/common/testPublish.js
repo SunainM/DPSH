@@ -1,6 +1,7 @@
 const mqtt = require('mqtt');
 
-const client = mqtt.connect('mqtt://localhost:1883', {
+require("dotenv").config({ path: require("path").resolve(__dirname, "../../.env") });
+const client = mqtt.connect(process.env.BROKER_URL || 'mqtt://localhost:1883', {
   clientId: 'psh-test-pub-' + Math.random().toString(16).slice(2),
   protocolVersion: 4,       // MQTT 3.1.1
   clean: true,
@@ -19,7 +20,7 @@ client.on('connect', () => {
       if (err) {
         console.error('❌ Publish error:', err.message);
       } else {
-        console.log('📤 Sent:', topic, payload, '(qos=0, retain=true)');
+        console.log('📤 Sent:', topic, payload, '(qos=1, retain=true)');
       }
       client.end(true, () => console.log('👋 Disconnected publisher'));
     });
