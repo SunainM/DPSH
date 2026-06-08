@@ -93,8 +93,8 @@ client.on("message", (topic, buf) => {
   if (topic !== TOPIC_CMD) return;
   try {
     const cmd = JSON.parse(buf.toString());
-    if (cmd.luminosity !== undefined) lightState.luminosity = Number(cmd.luminosity);
-    if (cmd.temp_k !== undefined) lightState.temp_k = Number(cmd.temp_k);
+    if (cmd.luminosity !== undefined) lightState.luminosity = clamp(Number(cmd.luminosity), MIN_LUM, MAX_LUM);
+    if (cmd.temp_k !== undefined) lightState.temp_k = clamp(Number(cmd.temp_k), MIN_K, MAX_K);
     console.log(`📥💡 ${ROOM} received cmd:`, cmd);
   } catch {
     console.error("❌ bad JSON cmd:", buf.toString());

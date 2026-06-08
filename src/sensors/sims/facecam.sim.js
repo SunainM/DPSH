@@ -30,7 +30,7 @@ const roomCfg = JSON.parse(fs.readFileSync(cfgPath, "utf8"));
 const sensorCfg = (roomCfg.sensors || []).find((s) => s.type === "facecam");
 if (!sensorCfg) throw new Error(`❌ No "facecam" sensor in ${cfgPath}`);
 
-const { broker = "process.env.BROKER_URL", intervalMs: INTERVAL_MS = 5000, pAdd = 0.45, pRemove = 0.35, maxFaces = 5, camRes = 64, pNewFace = 0.01 } = sensorCfg;
+const { broker = process.env.BROKER_URL, intervalMs: INTERVAL_MS = 5000, pAdd = 0.45, pRemove = 0.35, maxFaces = 5, camRes = 64, pNewFace = 0.01 } = sensorCfg;
 
 const ROOM = roomCfg.room || room;
 

@@ -14,8 +14,9 @@ const DB_NAME = process.env.DB_NAME || "smarthome";
 const FACE_COLL = process.env.FACE_COLL || "faces";
 
 // Topics
-const SUB_TOPIC = "homeA/+/faceData";
+const SUB_TOPIC = "homeA/+/face";
 const PUB_TOPIC = (room) => `homeA/${room}/FaceNames`;
+const MOOD_TOPIC = (room) => `homeA/${room}/mood/in`;
 
 const MOODS = ["relax", "focus", "sleep", "energize"];
 const P_KEEP_MOOD = Number(process.env.P_KEEP_MOOD ?? 0.99); // chance to KEEP same mood
@@ -94,8 +95,9 @@ function pickRandomMood() {
 
     // ✅ Publish empty immediately if count == 0 or faces array empty
     if (faces.length === 0 || faceCount === 0) {
-      const out = { room, names: [], user_moods: {}, count: 0, ts: Date.now() };
+      const out = { room, names: [], user_moods: [], count: 0, ts: Date.now() };
       client.publish(PUB_TOPIC(room), JSON.stringify(out), { qos: 0 });
+      client.publish(MOOD_TOPIC(room), JSON.stringify([]), { qos: 0 });
       console.log("📤 (empty)", PUB_TOPIC(room), out);
       return;
     }
@@ -135,9 +137,10 @@ function pickRandomMood() {
       user_moods.push({ id, mood: moodByUser.get(id) });
     }
 
-    // ✅ Publish names (only if we actually had faces per requirement above)
+    // ✅ Publish names + forward user_moods to aggregator
     const out = { room, names, user_moods, count: names.length, ts: Date.now() };
     client.publish(PUB_TOPIC(room), JSON.stringify(out), { qos: 0 });
+    client.publish(MOOD_TOPIC(room), JSON.stringify(user_moods), { qos: 0 });
     console.log("📤", PUB_TOPIC(room), out);
   });
 
